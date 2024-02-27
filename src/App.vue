@@ -21,8 +21,8 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div class="bg-white">
-    <div class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300 bg-opacity-95 bg-base-100">
+  <div>
+    <div class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300 bg-opacity-95">
       <div class="navbar max-w-screen-lg mx-auto my-2 px-4 space-x-2">
         <div class="flex-1">
           <div class="flex items-center logo cursor-pointer">
@@ -32,7 +32,7 @@ onBeforeMount(async () => {
             </span>
           </div>
         </div>
-        <div>
+        <div class="hidden sm:flex">
           <button class="btn btn-ghost">
             热门应用
           </button>
@@ -48,7 +48,7 @@ onBeforeMount(async () => {
         <div class="hidden lg:flex px-3">
           <div class="border-l border-base-300 h-6"></div>
         </div>
-        <label class="swap swap-rotate text-2xl">
+        <label class="swap swap-rotate text-xl">
           <input type="checkbox" @change="darkChange" class="hidden" v-model="dark"/>
           <i class="icon icon-light swap-on"></i>
           <i class="icon icon-dark swap-off"></i>
@@ -56,6 +56,11 @@ onBeforeMount(async () => {
         <div class="hidden lg:flex space-x-2">
           <button class="btn btn-ghost">注册</button>
           <button class="btn btn-active btn-outline">登录</button>
+        </div>
+        <div class="lg:hidden">
+          <button class="btn btn-ghost">
+            <i class="icon icon-bars text-xl"></i>
+          </button>
         </div>
       </div>
     </div>
