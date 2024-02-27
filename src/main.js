@@ -1,6 +1,9 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import './style.scss'
 import 'virtual:vite-svg-2-webfont.css'
 import App from './App.vue'
+import router from './router.js'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
