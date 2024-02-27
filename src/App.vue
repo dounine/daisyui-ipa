@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import {onBeforeMount, ref} from "vue"
+
 const dark = ref(localStorage.getItem('theme') === 'dark')
 const darkChange = () => {
   if (dark.value) {
@@ -23,19 +24,31 @@ onBeforeMount(async () => {
 <template>
   <div class="bg-white">
     <div class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300">
-      <div class="navbar max-w-screen-lg mx-auto">
+      <div class="navbar max-w-screen-lg mx-auto my-2 px-8 space-x-2">
         <div class="flex-1">
-          <a href="/" class="flex items-center ml-2 font-bold">
-            <i class="icon icon-apple"></i>
+          <div class="flex items-center logo cursor-pointer">
+            <i class="icon icon-apple text-3xl"></i>
+            <span class="font-bold text-lg">
             daisyui
-          </a>
+            </span>
+          </div>
         </div>
-        <div class="flex-none">
-          <label class="swap swap-rotate mr-2">
-            <input type="checkbox" @change="darkChange" class="hidden" v-model="dark"/>
-            <i class="icon icon-light swap-on text-2xl"></i>
-            <i class="icon icon-dark swap-off text-2xl"></i>
-          </label>
+        <div>
+          <button class="btn btn-ghost">
+            <i class="icon icon-search text-2xl"></i>
+          </button>
+        </div>
+        <div class="hidden md:flex px-3">
+          <div class="border-l border-base-300 h-6"></div>
+        </div>
+        <label class="swap swap-rotate text-2xl">
+          <input type="checkbox" @change="darkChange" class="hidden" v-model="dark"/>
+          <i class="icon icon-light swap-on"></i>
+          <i class="icon icon-dark swap-off"></i>
+        </label>
+        <div class="hidden md:flex space-x-2">
+          <button class="btn btn-ghost">注册</button>
+          <button class="btn btn-active btn-outline">登录</button>
         </div>
       </div>
     </div>
@@ -45,8 +58,8 @@ onBeforeMount(async () => {
 
 <style scoped>
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  /*height: 6em;*/
+  /*padding: 1.5em;*/
   will-change: filter;
   transition: filter 300ms;
 }
