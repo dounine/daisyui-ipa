@@ -23,7 +23,7 @@ onBeforeMount(async () => {
 <template>
   <div>
     <div class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300 bg-opacity-95">
-      <div class="navbar max-w-screen-lg mx-auto my-2 px-4 space-x-2">
+      <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
         <div class="flex-1">
           <div class="flex items-center logo cursor-pointer">
             <i class="icon icon-apple text-3xl"></i>
@@ -58,9 +58,21 @@ onBeforeMount(async () => {
           <button class="btn btn-active btn-outline">登录</button>
         </div>
         <div class="lg:hidden">
-          <button class="btn btn-ghost">
-            <i class="icon icon-bars text-xl"></i>
-          </button>
+          <div class="drawer drawer-end">
+            <input id="my-drawer-4" type="checkbox" class="drawer-toggle"/>
+            <div class="drawer-content">
+              <label for="my-drawer-4" class="drawer-button btn btn-ghost">
+                <i class="icon icon-bars text-xl"></i>
+              </label>
+            </div>
+            <div class="drawer-side">
+              <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay drawer-box"></label>
+              <ul class="menu p-4 w-80 min-h-full bg-base-100 shadow-xl text-base-content">
+                <li><a>Sidebar Item 1</a></li>
+                <li><a>Sidebar Item 2</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -69,18 +81,25 @@ onBeforeMount(async () => {
       <div class="max-w-screen-lg mx-auto">
         <router-view></router-view>
       </div>
-<!--      <div v-if="copyright.enable" class="flex justify-center mb-20 text-accent text-sm">-->
-<!--        <a class="btn btn-sm btn-ghost normal-case font-normal" v-if="copyright.type==='link'"-->
-<!--           :href="copyright.link">{{ copyright.value }}</a>-->
-<!--        <span v-else>{{ copyright.value }}</span>-->
-<!--      </div>-->
+      <!--      <div v-if="copyright.enable" class="flex justify-center mb-20 text-accent text-sm">-->
+      <!--        <a class="btn btn-sm btn-ghost normal-case font-normal" v-if="copyright.type==='link'"-->
+      <!--           :href="copyright.link">{{ copyright.value }}</a>-->
+      <!--        <span v-else>{{ copyright.value }}</span>-->
+      <!--      </div>-->
     </div>
-<!--    <HotsView/>-->
+    <!--    <HotsView/>-->
   </div>
-  <!--  <HelloWorld msg="Vite + Vue" />-->
 </template>
 
 <style scoped>
+#my-drawer-4:checked ~ .drawer-side > .drawer-box {
+  @apply backdrop-blur-sm;
+}
+
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  @apply bg-black bg-opacity-20;
+}
+
 .logo {
   /*height: 6em;*/
   /*padding: 1.5em;*/
