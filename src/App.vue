@@ -55,7 +55,7 @@ onBeforeMount(async () => {
         </label>
         <div class="hidden lg:flex space-x-2">
           <button class="btn btn-ghost">注册</button>
-          <button class="btn btn-active btn-outline">登录</button>
+          <button class="btn btn-outline text-spa">登录</button>
         </div>
         <div class="lg:hidden">
           <div class="drawer drawer-end">
@@ -78,7 +78,7 @@ onBeforeMount(async () => {
     </div>
     <div id="viewBox" class="overflow-y-scroll h-screen">
       <div class="h-20"></div>
-      <div class="max-w-screen-lg mx-auto">
+      <div class="max-w-screen-lg mx-auto px-4 lg:px-0">
         <router-view></router-view>
       </div>
       <!--      <div v-if="copyright.enable" class="flex justify-center mb-20 text-accent text-sm">-->
