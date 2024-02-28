@@ -1,5 +1,6 @@
 import {createRouter, createWebHashHistory} from "vue-router"
 import IndexView from "./views/IndexView.vue";
+import SearchView from "./views/SearchView.vue";
 
 const routes = [
     {
@@ -12,6 +13,10 @@ const routes = [
         path: '/index',
         name: 'index',
         component: IndexView,
+    }, {
+        path: '/search',
+        name: 'search',
+        component: SearchView,
     }, {
         path: '/:catchAll(.*)',
         component: () => import('./views/NotFoundView.vue')
