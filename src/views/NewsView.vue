@@ -21,9 +21,9 @@ const count = ref(0)
 <template>
   <div>
     <div class="flex items-center p-4 space-x-1">
-      <i class="icon icon-app text-lg"></i>
+      <i class="icon icon-new text-lg"></i>
       <strong class="text-sm">
-        热门下载
+        最新提取
       </strong>
     </div>
     <div class="flex flex-wrap">

@@ -1,4 +1,5 @@
 <script setup>
+import Footer from "./views/Footer.vue";
 import {onBeforeMount, ref} from "vue"
 
 const dark = ref(localStorage.getItem('theme') === 'dark')
@@ -76,18 +77,13 @@ onBeforeMount(async () => {
         </div>
       </div>
     </div>
-    <div id="viewBox" class="overflow-y-scroll h-screen">
+    <div id="viewBox" class="overflow-y-scroll h-screen grid" style="grid-template-rows: auto 1fr auto;">
       <div class="h-20"></div>
       <div class="max-w-screen-lg mx-auto px-4 lg:px-0">
         <router-view></router-view>
       </div>
-      <!--      <div v-if="copyright.enable" class="flex justify-center mb-20 text-accent text-sm">-->
-      <!--        <a class="btn btn-sm btn-ghost normal-case font-normal" v-if="copyright.type==='link'"-->
-      <!--           :href="copyright.link">{{ copyright.value }}</a>-->
-      <!--        <span v-else>{{ copyright.value }}</span>-->
-      <!--      </div>-->
+      <Footer/>
     </div>
-    <!--    <HotsView/>-->
   </div>
 </template>
 
