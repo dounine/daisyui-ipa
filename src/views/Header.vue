@@ -28,19 +28,17 @@ onMounted(() => {
   }
 })
 const darkChange = () => {
-  if (dark.value) {
-    document.documentElement.attributes['data-theme'].value = 'dark'
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.attributes['data-theme'].value = 'light'
-    localStorage.setItem('theme', 'light')
-  }
+  let el = document.documentElement.attributes['data-theme'];
+  el.value = dark.value ? 'dark' : 'light'
+  localStorage.setItem('theme', dark.value ? 'dark' : 'light')
 }
 onBeforeMount(async () => {
+  let el = document.documentElement.attributes['data-theme'];
+  if (!el) return;
   if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.attributes['data-theme'].value = 'dark'
+    el.value = 'dark'
   } else {
-    document.documentElement.attributes['data-theme'].value = 'light'
+    el.value = 'light'
   }
 })
 </script>
