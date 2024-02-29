@@ -56,17 +56,17 @@ onBeforeMount(async () => {
         </div>
       </div>
       <div class="hidden sm:flex">
-<!--        <button class="btn btn-ghost">-->
-<!--          热门应用-->
-<!--        </button>-->
+        <!--        <button class="btn btn-ghost">-->
+        <!--          热门应用-->
+        <!--        </button>-->
         <button class="btn btn-ghost">
           AppStore 应用提取
         </button>
       </div>
       <div>
-        <button class="btn btn-ghost">
+        <a href="/#/search" class="hover:text-inherit btn btn-ghost">
           <i class="icon icon-search text-xl"></i>
-        </button>
+        </a>
       </div>
       <div class="hidden lg:flex px-3">
         <div class="border-l border-base-300 h-6"></div>
