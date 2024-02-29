@@ -15,8 +15,8 @@ const scrollView = (e) => {
   }
 }
 const handleTouchMove = (e) => {
-  if (noopacity.value === false) return
-  noopacity.value = false
+  if (noopacity.value) return
+  noopacity.value = true
 }
 
 onMounted(() => {
@@ -47,7 +47,7 @@ onBeforeMount(async () => {
 
 <template>
   <div v-bind:class="{'bg-opacity-95 bg-base-100':noopacity}"
-       class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300 bg-opacity-95">
+       class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300">
     <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
       <div class="flex-1">
         <div class="flex items-center logo cursor-pointer">
