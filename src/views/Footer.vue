@@ -9,7 +9,7 @@ const count = ref(0)
 </script>
 
 <template>
-  <div class="flex flex-row justify-around text-sm">
+  <div class="flex flex-row justify-between text-sm px-4">
     <div>
       <strong>站点服务</strong>
       <div class="mt-1">
