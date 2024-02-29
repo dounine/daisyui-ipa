@@ -1,21 +1,19 @@
 <script setup>
-import {ref} from 'vue'
+import {getCurrentInstance, onBeforeMount, ref} from 'vue'
 
-const list = ref([
-  {id: 1, name: 'Apple'},
-  {id: 2, name: 'Banana'},
-  {id: 3, name: '微信'},
-  {id: 4, name: 'QQ'},
-  {id: 5, name: 'Cherry'},
-  {id: 6, name: '陌陌'},
-  {id: 7, name: '王者'},
-  {id: 8, name: '蛋仔派对asfdklasfaklsdfjlkajsfd'},
-])
-defineProps({
-  msg: String,
+const {proxy} = getCurrentInstance()
+const list = ref([])
+const query = async () => {
+  proxy.axios.get('/app/news').then(res => {
+    if (res.data.ok) {
+      list.value = res.data.data
+    }
+  })
+}
+onBeforeMount(async () => {
+  console.log('mounted')
+  await query();
 })
-
-const count = ref(0)
 </script>
 
 <template>
@@ -27,18 +25,18 @@ const count = ref(0)
       </strong>
     </div>
     <div class="flex flex-wrap">
-      <div v-for="item in list"
+      <div v-for="app in list"
            class="w-full mx-1 md:mx-0 lg:w-1/4 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
         <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md">
           <div class="flex flex-row flex-1 my-4 ml-4">
             <div class="flex items-center">
               <img class="w-14 h-14 rounded-md"
-                   src="https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/de/e8/a1/dee8a11e-43a4-10ad-cc39-f2c6cba8aff3/AppIcon-1x_U007emarketing-0-10-0-85-220.jpeg/512x512bb.jpg"
-                   alt="图标"/>
+                   :src="app.icon"
+                   :alt="app.name"/>
             </div>
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-24">
-                <strong class="truncate">{{ item.name }}</strong>
+                <strong class="truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">
                 <p class="text-accent">国区</p>

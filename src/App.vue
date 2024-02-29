@@ -1,6 +1,18 @@
 <script setup>
 import Header from "./views/Header.vue"
-import Footer from "./views/Footer.vue";
+import Footer from "./views/Footer.vue"
+import {getCurrentInstance, onBeforeMount} from "vue"
+const {proxy} = getCurrentInstance()
+
+const query = async() => {
+  proxy.axios.get('/app/hots').then(res => {
+    console.log(res.data)
+  })
+}
+onBeforeMount(async () => {
+  console.log('mounted')
+  await query();
+})
 </script>
 
 <template>

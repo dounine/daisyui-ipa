@@ -17,7 +17,8 @@ const routes = [
         path: '/search',
         name: 'search',
         component: SearchView,
-    }, {
+    },
+    {
         path: '/:catchAll(.*)',
         component: () => import('./views/NotFoundView.vue')
     }

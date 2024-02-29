@@ -1,6 +1,7 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import viteSvgToWebfont from 'vite-svg-2-webfont'
+import {viteMockServe} from 'vite-plugin-mock'
 import {resolve} from 'path'
 import daisyui from "daisyui"
 
@@ -33,11 +34,25 @@ export default defineConfig({
             context: resolve(__dirname, 'src', 'svgs'),
         }),
         vue(),
+        viteMockServe({
+            mockPath: 'mock',
+            localEnabled: true, // 是否应用于本地
+            prodEnabled: false, // 是否应用于生产环境
+            enable: true,
+            watchFiles: true,
+        }),
         daisyui,
     ],
     server: {
         port: 8080,
         host: true,
-        hmr: true
+        hmr: true,
+        // proxy: {
+        //     '/api': {
+        //         target: 'https://127.0.0.1:8080',   //实际请求地址
+        //         changeOrigin: true,
+        //         rewrite: (path) => path.replace(/^\/api/, '/api')
+        //     },
+        // }
     },
 })
