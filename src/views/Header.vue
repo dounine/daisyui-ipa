@@ -56,9 +56,9 @@ onBeforeMount(async () => {
         </div>
       </div>
       <div class="hidden sm:flex">
-        <button class="btn btn-ghost">
-          热门应用
-        </button>
+<!--        <button class="btn btn-ghost">-->
+<!--          热门应用-->
+<!--        </button>-->
         <button class="btn btn-ghost">
           AppStore 应用提取
         </button>
