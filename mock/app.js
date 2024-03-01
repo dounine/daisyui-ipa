@@ -22,14 +22,14 @@ export default [
                     },
                     versions: [
                         {
-                            version: '1.0.0',
+                            version: '1.0.1',
                             size: 341234,
-                            time: 1789089089,
+                            time: '2024-02-03 14:14:14',
                         },
                         {
                             version: '1.0.0',
                             size: 341234,
-                            time: 1789089089,
+                            time: '2024-02-02 14:14:14',
                         }
                     ]
                 }
