@@ -48,12 +48,14 @@ onBeforeMount(async () => {
        class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300">
     <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
       <div class="flex-1">
-        <div class="flex items-center logo cursor-pointer">
-          <i class="icon icon-apple text-3xl"></i>
-          <span class="font-bold text-lg">
+        <RouterLink to="index" class="text-inherit hover:text-inherit">
+          <div class="flex items-center logo cursor-pointer">
+            <i class="icon icon-apple text-3xl"></i>
+            <span class="font-bold text-lg">
             daisyui
             </span>
-        </div>
+          </div>
+        </RouterLink>
       </div>
       <div class="hidden sm:flex">
         <!--        <button class="btn btn-ghost">-->
@@ -64,9 +66,11 @@ onBeforeMount(async () => {
         </button>
       </div>
       <div>
-        <a href="/#/search" class="hover:text-inherit btn btn-ghost">
-          <i class="icon icon-search text-xl"></i>
-        </a>
+        <RouterLink to="search" class="text-inherit hover:text-inherit">
+          <div class="hover:text-inherit btn btn-ghost">
+            <i class="icon icon-search text-xl"></i>
+          </div>
+        </RouterLink>
       </div>
       <div class="hidden lg:flex px-3">
         <div class="border-l border-base-300 h-6"></div>
