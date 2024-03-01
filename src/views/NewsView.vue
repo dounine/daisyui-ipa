@@ -18,7 +18,7 @@ onBeforeMount(async () => {
 
 <template>
   <div>
-    <div class="flex items-center p-4 space-x-1">
+    <div class="flex items-center mx-4 space-x-1">
       <i class="icon icon-new text-lg"></i>
       <strong class="text-sm">
         最新提取
@@ -26,17 +26,18 @@ onBeforeMount(async () => {
     </div>
     <div class="flex flex-wrap">
       <div v-for="app in list"
-           class="w-full mx-1 md:mx-0 lg:w-1/4 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
+           class="w-full mx-4 md:mx-0 lg:w-1/4 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
         <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md">
           <div class="flex flex-row flex-1 my-4 ml-4">
-            <div class="flex items-center">
+            <div class="flex flex-1 items-center min-w-14 max-w-14">
               <img class="w-14 h-14 rounded-md"
                    :src="app.icon"
+                   :title="app.name"
                    :alt="app.name"/>
             </div>
             <div class="flex-col flex-1 justify-around ml-2">
-              <div class="flex items-center w-full lg:w-24">
-                <strong class="truncate">{{ app.name }}</strong>
+              <div class="flex items-center w-full lg:w-24 md:max-w-60">
+                <strong class="md:truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">
                 <p class="text-accent">国区</p>

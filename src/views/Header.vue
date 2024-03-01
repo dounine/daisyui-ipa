@@ -71,7 +71,7 @@ onBeforeMount(async () => {
       <div class="hidden lg:flex px-3">
         <div class="border-l border-base-300 h-6"></div>
       </div>
-      <label class="swap swap-rotate text-xl">
+      <label class="swap swap-rotate text-2xl">
         <input type="checkbox" @change="darkChange" class="hidden" v-model="dark"/>
         <i class="icon icon-light swap-on"></i>
         <i class="icon icon-dark swap-off"></i>

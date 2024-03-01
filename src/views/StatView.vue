@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="mx-4 stats shadow flex flex-col stats-vertical sm:stats-horizontal sm:flex-row">
+  <div class="stats shadow flex flex-col stats-vertical sm:stats-horizontal sm:flex-row">
     <div class="stat">
       <div class="stat-figure text-neutral-content">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

@@ -19,12 +19,12 @@ onBeforeMount(async () => {
 <template>
   <div>
     <Header/>
-    <div id="viewBox" class="overflow-y-scroll h-screen grid" style="grid-template-rows: auto 1fr;">
+    <div id="viewBox" class="overflow-y-scroll h-screen">
       <div class="h-20"></div>
-      <div class="max-w-screen-lg mx-auto px-4 lg:px-0">
-        <div class="overflow-y-scroll h-screen grid" style="grid-template-rows: 1fr auto;">
-          <router-view></router-view>
-        </div>
+      <div class="max-w-screen-lg mx-auto">
+        <router-view></router-view>
+      </div>
+      <div class="max-w-screen-lg mx-auto mt-0 lg:mt-24">
         <Footer/>
       </div>
     </div>
