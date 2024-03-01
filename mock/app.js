@@ -1,5 +1,42 @@
 export default [
     {
+        url: '/app/versions',
+        method: 'get',
+        statusCode: 200,
+        response: ({query}) => {
+            return {
+                ok: true,
+                data: {
+                    info: {
+                        name: '方块消消乐2022',
+                        genres: ['休闲'],
+                        description: '方块消消乐2022',
+                        free: true,
+                        price: '',
+                        minimumOsVersion: '14.0',
+                        country: 'cn',
+                        appid: '123434',
+                        version: '1.0.0',
+                        size: 12342134,
+                        icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple122/v4/de/e8/a1/dee8a11e-43a4-10ad-cc39-f2c6cba8aff3/AppIcon-1x_U007emarketing-0-10-0-85-220.jpeg/512x512bb.jpg',
+                    },
+                    versions: [
+                        {
+                            version: '1.0.0',
+                            size: 341234,
+                            time: 1789089089,
+                        },
+                        {
+                            version: '1.0.0',
+                            size: 341234,
+                            time: 1789089089,
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    {
         url: '/app/hots',
         method: 'get',
         statusCode: 200,

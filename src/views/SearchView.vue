@@ -23,7 +23,7 @@ const search_change = async (e) => {
   let res = null
   try {
     loading.value = true
-    res = await proxy.axios.post(`https://itunes.apple.com/${country.value}/search?term=${encodeURIComponent(value)}&media=software&limit=20&entity=software&country=${country.value}`)
+    res = await proxy.axios.post(`https://itunes.apple.com/${country.value}/search?term=${encodeURIComponent(value)}&media=software&limit=21&entity=software&country=${country.value}`)
   } catch (e) {
     // loadTimeout.value = e.message.includes('timeout')
     return
@@ -78,7 +78,7 @@ const search_change = async (e) => {
     <div class="flex flex-wrap">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="app in list"
-           class="w-full mx-4 md:mx-0 lg:w-1/4 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
+           class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
         <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md">
           <div class="flex flex-row flex-1 my-4 ml-4">
             <div class="flex flex-1 items-center min-w-14 max-w-14">
@@ -88,7 +88,7 @@ const search_change = async (e) => {
                    :alt="app.name"/>
             </div>
             <div class="flex-col justify-around ml-2">
-              <div class="flex items-center w-full lg:w-24 md:max-w-60">
+              <div class="flex items-center w-full lg:w-48 md:max-w-60">
                 <strong class="md:truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">
