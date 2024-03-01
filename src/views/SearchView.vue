@@ -14,12 +14,12 @@ import NewsView from "./NewsView.vue";
         </svg>
         <input type="text" class="grow outline-none" placeholder="请输入AppStore应用名字"/>
       </label>
-      <div class="dropdown dropdown-left join-item">
+      <div class="dropdown dropdown-bottom relative join-item">
         <div tabindex="0" role="button" class="btn rounded-l-none shadow-md space-x-3">
           <p>中国区</p>
           <i class="icon icon-carte-down text-sm"></i>
         </div>
-        <ul tabindex="0" class="dropdown-content z-[1] menu shadow-md bg-base-100 w-52">
+        <ul tabindex="0" class="dropdown-content z-[1] rounded menu shadow-md bg-base-100 w-28 right-0">
           <li><a>中国区</a></li>
           <li><a>美国区</a></li>
         </ul>
