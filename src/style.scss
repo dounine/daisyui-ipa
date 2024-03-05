@@ -44,9 +44,11 @@ body {
 //  background-repeat: no-repeat;
 //  @apply h-screen;
 //}
-
+body {
+  @apply bg-base-300;
+}
 html #app {
-  @apply h-screen;
+  @apply h-screen ;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.01)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
 }
 .toggle {
@@ -85,8 +87,16 @@ button:focus-visible {
   //margin: 0 auto;
   //padding: 2rem;
   //text-align: center;
+  //@apply h-screen bg-base-100;
 }
-
+.modal {
+  background-color: rgb(0, 0, 0, 0.3);
+  //不加上低端机型无法显示背景
+}
+.loading-spinner {
+  @apply h-6;
+  //不加上低端机型无法显示
+}
 @media (prefers-color-scheme: light) {
   body{
     //background-image: url("./assets/bg-light.jpg");
