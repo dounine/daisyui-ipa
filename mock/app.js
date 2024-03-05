@@ -9,10 +9,10 @@ export default [
                 data: {
                     info: {
                         name: '方块消消乐2022',
-                        genres: ['休闲'],
-                        description: '方块消消乐2022',
+                        genres: '休闲',
+                        description: '消消乐',
                         free: true,
-                        price: '',
+                        price: '免费',
                         minimumOsVersion: '14.0',
                         country: 'cn',
                         appid: '123434',

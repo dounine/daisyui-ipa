@@ -52,7 +52,7 @@ onBeforeMount(async () => {
           </div>
           <div class="flex items-end mb-3.5">
             <RouterLink to="versions" class="text-inherit hover:text-inherit">
-              <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2"></i>
+              <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2 text-blue-600"></i>
             </RouterLink>
           </div>
         </div>

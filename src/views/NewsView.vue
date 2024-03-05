@@ -50,7 +50,7 @@ onBeforeMount(async () => {
             </div>
           </div>
           <div class="flex items-end mb-3.5">
-            <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2"></i>
+            <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2 text-blue-600"></i>
           </div>
         </div>
       </div>
