@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import viteSvgToWebfont from 'vite-svg-2-webfont'
 import {viteMockServe} from 'vite-plugin-mock'
 import {resolve} from 'path'
-import daisyui from "daisyui"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,7 +40,6 @@ export default defineConfig({
             enable: true,
             watchFiles: true,
         }),
-        daisyui,
     ],
     server: {
         port: 8080,

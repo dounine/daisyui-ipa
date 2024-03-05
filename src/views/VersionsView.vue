@@ -48,7 +48,7 @@ onMounted(async () => {
           </div>
           <div class="flex justify-center ">
             <button
-                class="btn hover:text-info hover:bg-inherit hover:border-info text-blue-600 btn-outline kbd px-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
+                class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
               Download 下载
               <i class="icon icon-download text-lg"></i>
             </button>
@@ -68,13 +68,13 @@ onMounted(async () => {
               <img :src="data.info.icon" class="w-10 h-10 rounded-lg m-4" :alt="data.info.name"/>
             </div>
             <div class="flex flex-col">
-              <p class="font-bold text-xl">{{data.info.name}}</p>
-              <p class="text-base-content/80 text-lg">{{data.info.version}}</p>
+              <p class="font-bold text-xl">{{ data.info.name }}</p>
+              <p class="text-base-content/80 text-lg">{{ data.info.version }}</p>
             </div>
           </div>
           <div class="flex items-center">
             <button class="btn btn-ghost">
-              <i class="icon icon-download text-2xl text-blue-600"></i>
+              <i class="icon icon-download text-2xl text-primary"></i>
             </button>
           </div>
         </div>
@@ -90,10 +90,10 @@ onMounted(async () => {
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="version in data.versions"
            class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
-        <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md">
-          <div class="flex flex-row flex-1 my-4 ml-4">
-            <div class="flex-col justify-around ml-2">
-              <div class="flex items-center w-full lg:w-48 md:max-w-60">
+        <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
+          <div class="flex flex-row flex-1 my-4">
+            <div class="flex-col flex-1 justify-around ml-2">
+              <div class="flex items-center w-full lg:w-44 md:max-w-60">
                 <strong class="md:truncate">{{ version.version }}</strong>
               </div>
               <div class="flex items-center text-sm size">
@@ -105,7 +105,7 @@ onMounted(async () => {
             </div>
           </div>
           <div class="flex items-end mb-3.5">
-            <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2 text-blue-600"></i>
+            <i class="icon icon-download text-xl cursor-pointer hover:text-info text-primary"></i>
           </div>
         </div>
       </div>
