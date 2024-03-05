@@ -38,6 +38,7 @@ onBeforeMount(async () => {
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">
                 <strong class="md:truncate">{{ app.name }}</strong>
+                <strong class="md:truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">
                 <p class="text-accent">国区</p>

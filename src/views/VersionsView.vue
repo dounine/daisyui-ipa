@@ -28,7 +28,7 @@ onMounted(async () => {
 
 <template>
   <div class="mt-10">
-    <div class="hidden sm:flex flex-col py-0 bg-base-100 sm:bg-base-200 px-4 py-4 rounded-lg">
+    <div class="hidden sm:flex flex-col bg-base-100 sm:bg-base-200 px-4 py-4 rounded-lg">
       <div class="flex flex-col-reverse sm:flex-row">
         <div class="flex flex-col space-y-6 max-w-screen-sm mx-auto md:mt-4">
           <h1 class="flex text-3xl font-bold max-w-80">{{ data.info.name }}</h1>
