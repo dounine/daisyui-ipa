@@ -30,28 +30,30 @@ onMounted(async () => {
   <div class="mt-10">
     <div class="hidden sm:flex flex-col bg-base-100 sm:bg-base-200 px-4 py-4 rounded-lg">
       <div class="flex flex-col-reverse sm:flex-row">
-        <div class="flex flex-col space-y-6 max-w-screen-sm mx-auto md:mt-4">
-          <h1 class="flex text-3xl font-bold max-w-80">{{ data.info.name }}</h1>
-          <p class="flex">{{ data.info.description }}</p>
-          <div class="flex flex-row space-x-4">
-            <div v-for="item in [
+        <div class="flex-1 flex flex-row justify-center items-center">
+          <div class="flex flex-col space-y-6 max-w-screen-sm md:mt-4">
+            <h1 class="flex text-3xl font-bold max-w-80">{{ data.info.name }}</h1>
+            <p class="flex">{{ data.info.description }}</p>
+            <div class="flex flex-row space-x-4">
+              <div v-for="item in [
                 {name:'分类',value:'genres',icon:'icon-type'},
                 {name:'价格',value:'price',icon:'icon-price'},
                 {name:'地区',value:'country',icon:'icon-country'},
                 {name:'版本',value:'version',icon:'icon-version2'}
                 ]"
-                 class="border rounded-lg border-base-content py-6 px-6 flex flex-col items-center">
-              <i :class="'icon text-3xl '+item.icon || 'icon-type'"></i>
-              <p class="text-sm mt-3">{{ item.name }}</p>
-              <p class="font-bold">{{ data.info[item.value] }}</p>
+                   class="border rounded-lg border-base-content py-6 px-2 md:px-6 flex flex-col items-center">
+                <i :class="'icon text-3xl '+item.icon || 'icon-type'"></i>
+                <p class="text-sm mt-3">{{ item.name }}</p>
+                <p class="font-bold">{{ data.info[item.value] }}</p>
+              </div>
             </div>
-          </div>
-          <div class="flex justify-center ">
-            <button
-                class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
-              Download 下载
-              <i class="icon icon-download text-lg"></i>
-            </button>
+            <div class="flex justify-center ">
+              <button
+                  class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
+                Download 下载
+                <i class="icon icon-download text-lg"></i>
+              </button>
+            </div>
           </div>
         </div>
         <div class="flex flex-1 justify-center items-center">
@@ -89,7 +91,7 @@ onMounted(async () => {
     <div class="flex flex-wrap">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="version in data.versions"
-           class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
+           class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
         <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">

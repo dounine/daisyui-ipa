@@ -1,32 +1,8 @@
 <script setup>
 import {onBeforeMount, onMounted, ref} from "vue"
 
-const noopacity = ref(false)
-
 const dark = ref(localStorage.getItem('theme') === 'dark')
 
-const scrollView = (e) => {
-  if (e.target.scrollTop > 0) {
-    if (noopacity.value) return
-    noopacity.value = true
-  } else {
-    if (!noopacity.value) return
-    noopacity.value = false
-  }
-}
-const handleTouchMove = (e) => {
-  if (noopacity.value) return
-  noopacity.value = true
-}
-
-onMounted(() => {
-  let viewBox = document.getElementById('viewBox')
-  viewBox.addEventListener('scroll', scrollView)
-  viewBox.addEventListener("touchmove", handleTouchMove);
-  if (viewBox.scrollHeight > viewBox.clientHeight) {
-    noopacity.value = true
-  }
-})
 const darkChange = () => {
   let el = document.documentElement.attributes['data-theme'];
   el.value = dark.value ? 'dark' : 'light'
@@ -44,9 +20,8 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div v-bind:class="{'bg-opacity-95 bg-base-100':noopacity}"
-       class="fixed top-0 left-0 right-0 shadow-sm z-20 transition ease-in-out duration-300">
-    <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
+  <div class="fixed top-0 left-0 right-0 shadow-sm z-10 transition ease-in-out duration-300 backdrop-blur">
+    <div class="navbar max-w-screen-lg mx-auto bg-blur my-1 px-4 space-x-2">
       <div class="flex-1">
         <RouterLink to="index" class="text-inherit hover:text-inherit">
           <div class="flex items-center logo cursor-pointer">
