@@ -1,19 +1,13 @@
 <template>
-  <div class="flex items-center min-h-[80vh] px-4 py-12 mx-auto">
-    <div class="flex flex-col items-center max-w-sm mx-auto text-center">
-      <h1 class="mt-3 text-2xl font-semibold md:text-2xl">404 找不到对应的页面</h1>
-      <p class="mt-4 text-accent">对不起，您访问的这个页面不存在，或者被删除了。</p>
-
-      <div class="flex items-center w-full mt-6 gap-x-3 shrink-0 sm:w-auto">
-        <a href="javascript:history.back()" class="btn w-1/2">
-          <i class="icon icon-back"></i>
-          返回
-        </a>
-        <a href="/" class="btn btn-primary w-1/2 normal-case">
-          <i class="icon icon-home"></i>
-          主页
-        </a>
+  <main class="grid h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
+    <div class="text-center">
+      <p class="text-base font-mono text-primary">404</p>
+      <h1 class="mt-4 text-3xl font-bold text-accent-content sm:text-5xl">页面找不到</h1>
+      <p class="mt-6 leading-7">对不起, 网站找不到您要找的地址.</p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a href="/" class="btn btn-primary">访问首页</a>
+        <a href="#" class="text-sm">联系我们 <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
-  </div>
+  </main>
 </template>
