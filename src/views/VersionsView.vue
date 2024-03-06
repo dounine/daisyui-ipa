@@ -92,7 +92,7 @@ onMounted(async () => {
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="version in data.versions"
            class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
-        <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
+        <div class="dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">
