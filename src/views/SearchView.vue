@@ -50,9 +50,9 @@ const search_change = async (e) => {
 <template>
   <div class="mx-4 mt-10 space-y-10">
     <div class="flex flex-row flex-1 join my-2">
-      <label class="input outline-none shadow-md flex items-center gap-2 flex-1 rounded-r-none">
+      <label class="input shadow-md flex items-center gap-2 flex-1 rounded-r-none">
         <i class="icon icon-search text-md"></i>
-        <input type="text" @change="search_change" class="grow outline-none" placeholder="请输入AppStore应用名字"/>
+        <input type="text" @change="search_change" class="bg-base-100 grow" placeholder="请输入AppStore应用名字"/>
       </label>
       <div class="dropdown dropdown-bottom relative join-item">
         <div tabindex="0" role="button" class="btn rounded-l-none shadow-md space-x-3">
