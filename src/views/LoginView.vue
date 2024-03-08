@@ -26,7 +26,7 @@ const count = ref(0)
               </div>
             </div>
             <div class="mt-2">
-              <span class="text-base-content/50 text-sm">使用邮箱获取难码可一键完成登录或者注册</span>
+              <span class="text-base-content/50 text-sm">使用邮箱获取验证码可一键完成登录或注册</span>
             </div>
           </div>
           <div class="flex flex-col space-y-8">
