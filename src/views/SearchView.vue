@@ -88,7 +88,7 @@ const search_change = async (e) => {
                    :alt="app.name"/>
             </div>
             <div class="flex-col justify-around ml-2">
-              <div class="flex items-center w-full lg:w-48 md:max-w-60">
+              <div class="flex items-center w-full lg:w-40 md:max-w-60">
                 <strong class="md:truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">

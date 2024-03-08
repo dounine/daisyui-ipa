@@ -36,7 +36,7 @@ onBeforeMount(async () => {
         <!--        <button class="btn btn-ghost">-->
         <!--          热门应用-->
         <!--        </button>-->
-        <button class="btn btn-ghost">
+        <button class="btn btn-ghost normal-case">
           AppStore 应用提取
         </button>
       </div>
@@ -56,8 +56,12 @@ onBeforeMount(async () => {
         <i class="icon icon-dark swap-off"></i>
       </label>
       <div class="hidden lg:flex space-x-2">
-        <button class="btn btn-ghost">注册</button>
-        <button class="btn btn-outline text-spa">登录</button>
+        <RouterLink to="login" class="text-inherit hover:text-inherit">
+          <button class="btn btn-ghost">注册</button>
+        </RouterLink>
+        <RouterLink to="login" class="text-inherit hover:text-inherit">
+          <button class="btn btn-outline text-spa">登录</button>
+        </RouterLink>
       </div>
       <div class="lg:hidden">
         <div class="drawer drawer-end">
