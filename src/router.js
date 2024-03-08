@@ -14,18 +14,22 @@ const routes = [
     }, {
         path: '/login',
         name: 'login',
-        component: () => import('./views/LoginView.vue'),
+        component: () => import('./views/Login.vue'),
     }, {
         path: '/search',
         name: 'search',
-        component: () => import('./views/SearchView.vue'),
+        component: () => import('./views/Search.vue'),
     }, {
         path: '/versions',
         name: 'versions',
-        component: () => import('./views/VersionsView.vue')
+        component: () => import('./views/Versions.vue')
+    }, {
+        path: '/profile',
+        name: 'profile',
+        component: () => import('./views/Profile.vue')
     }, {
         path: '/:catchAll(.*)',
-        component: () => import('./views/NotFoundView.vue')
+        component: () => import('./views/NotFound.vue')
     }
 ]
 const router = createRouter({

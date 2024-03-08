@@ -1,7 +1,7 @@
 <script setup>
-import HotsView from "./HotsView.vue";
-import NewsView from "./NewsView.vue";
-import StatView from "./StatView.vue";
+import HotsView from "./Hots.vue";
+import NewsView from "./News.vue";
+import StatView from "./Stat.vue";
 </script>
 
 <template>
