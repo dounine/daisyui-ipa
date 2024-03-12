@@ -102,6 +102,12 @@ export default [
                         country: 'CN',
                         icon: 'https://is5-ssl.mzstatic.com/image/thumb/Purple127/v4/49/ac/96/49ac96ae-576a-4eec-802b-33587a141f66/mzl.gdqvlnku.png/512x512bb.jpg'
                     },
+                    {
+                        id: 9,
+                        name: '天学网学生',
+                        country: 'CN',
+                        icon: 'https://is4-ssl.mzstatic.com/image/thumb/Purple126/v4/cf/8a/93/cf8a935e-af7d-f8ec-4dcb-2c91abf545f0/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg'
+                    },
                 ],
             }
         },
@@ -162,6 +168,12 @@ export default [
                         country: 'US',
                         icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/dc/d9/6f/dcd96fa9-ba9b-f206-3804-54f2e69d760e/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg'
                     },
+                    {
+                        id: 9,
+                        name: '华商E家',
+                        country: 'CN',
+                        icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/30/53/a4/3053a4cf-9d61-5ebd-facc-b5ff1b0e6795/AppIcon-0-0-1x_U007emarketing-0-0-0-2-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg'
+                    }
                 ],
             }
         },

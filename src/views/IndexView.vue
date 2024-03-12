@@ -6,7 +6,7 @@ import StatView from "./Stat.vue";
 
 <template>
   <div>
-    <StatView class="mt-4 mx-4"/>
+<!--    <StatView class="mt-4 mx-4"/>-->
     <HotsView class="mt-4"/>
     <NewsView class="mt-4"/>
   </div>
