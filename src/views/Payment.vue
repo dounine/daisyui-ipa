@@ -1,71 +1,189 @@
 <script setup>
 import {ref} from 'vue'
 
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
 </script>
 
 <template>
   <div>
     <div class="px-4 space-y-4">
-      <div class="flex flex-row">
-        <div class="flex flex-row items-center text-info space-x-1">
+      <div class="flex flex-row mt-8">
+        <div class="flex flex-row items-center space-x-1">
           <i class="icon icon-crown text-lg"></i>
           <h1 class="font-medium">享受服务</h1>
         </div>
       </div>
       <div class="space-y-2">
         <div>
-          <h1 class="text-2xl text-primary font-medium">选择要支付的服务项</h1>
+          <h1 class="text-2xl font-medium">选择要支付的服务项</h1>
         </div>
         <div class="text-base-content/30">
           支付的金额将兑换成相应的服务
         </div>
       </div>
       <div class="flex flex-wrap">
-        <div
-            class="shadow mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
-          <div class="dark-bg opacity-95 shadow rounded-md px-4">
+        <div class="pay-item">
+          <div class="pay-shadow">
             <div class="flex justify-center">
-              <svg class="w-20 h-20 fill-info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <svg class="w-20 h-20 pay-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                     d="M160 112v48H288V112c0-35.3-28.7-64-64-64s-64 28.7-64 64zm-48 96H48V416c0 26.5 21.5 48 48 48H352c26.5 0 48-21.5 48-48V208H336v56c0 13.3-10.7 24-24 24s-24-10.7-24-24V208H160v56c0 13.3-10.7 24-24 24s-24-10.7-24-24V208zm0-48V112C112 50.1 162.1 0 224 0s112 50.1 112 112v48h64c26.5 0 48 21.5 48 48V416c0 53-43 96-96 96H96c-53 0-96-43-96-96V208c0-26.5 21.5-48 48-48h64z"/>
               </svg>
             </div>
-            <div>超级充值</div>
-            <div class="font-bold font-mono"><span>￥</span><span>8.00</span></div>
-            <div class="font-bold font-mono"><span>获得金币</span><span>8.00</span></div>
+            <div class="pay-label">
+              超级充值
+            </div>
+            <div class="pay-info">
+              <div class="flex items-center">
+                <span class="pay-coin">8.00</span>
+              </div>
+              <div class="pay-info-split">/</div>
+              <div class="pay-info-money">
+                ￥8.00
+              </div>
+            </div>
+            <div class="px-4">
+              <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币永不清零</span>
+              </div>
+            </div>
+            <div class="flex mt-4">
+              <button class="pay-btn">立即购买</button>
+            </div>
           </div>
         </div>
-        <!--        <div-->
-        <!--            class="mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">-->
-        <!--          <div>-->
-        <!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">-->
-        <!--              <path-->
-        <!--                  d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H69.5c3.8 0 7.1 2.7 7.9 6.5l51.6 271c6.5 34 36.2 58.5 70.7 58.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H199.7c-11.5 0-21.4-8.2-23.6-19.5L170.7 288H459.2c32.6 0 61.1-21.8 69.5-53.3l41-152.3C576.6 57 557.4 32 531.1 32h-411C111 12.8 91.6 0 69.5 0H24zM131.1 80H520.7L482.4 222.2c-2.8 10.5-12.3 17.8-23.2 17.8H161.6L131.1 80zM176 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm336-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0z"/>-->
-        <!--            </svg>-->
-        <!--          </div>-->
-        <!--          <div>豪华充值</div>-->
-        <!--        </div>-->
-        <!--        <div>-->
-        <!--          <div>-->
-        <!--            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">-->
-        <!--              <path-->
-        <!--                  d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/>-->
-        <!--            </svg>-->
-        <!--          </div>-->
-        <!--          <div>至尊充值</div>-->
-        <!--        </div>-->
+        <div
+            class="pay-item">
+          <div class="pay-shadow">
+            <div class="flex justify-center">
+              <svg class="w-20 h-20 pay-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path
+                    d="M176 96c0-26.5 21.5-48 48-48s48 21.5 48 48v64H176V96zm-48 64H48 0v48V432v48H48 160V432H48V208H400v16h48V208 160H400 320V96c0-53-43-96-96-96s-96 43-96 96v64zm448 96H192V512H576V256zM320 336v16c0 35.3 28.7 64 64 64s64-28.7 64-64V336 320h32v16 16c0 53-43 96-96 96s-96-43-96-96V336 320h32v16z"/>
+              </svg>
+            </div>
+            <div class="pay-label">
+              豪华充值
+            </div>
+            <div class="pay-info">
+              <div class="flex items-center">
+                <span class="pay-coin">32.00</span>
+              </div>
+              <div class="pay-info-split">/</div>
+              <div class="pay-info-money">
+                ￥30.00
+              </div>
+            </div>
+            <div class="px-4">
+              <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币永不清零</span>
+              </div>
+            </div>
+            <div class="flex mt-4">
+              <button class="pay-btn">立即购买</button>
+            </div>
+          </div>
+        </div>
+        <div class="pay-item">
+          <div class="pay-shadow">
+            <div class="flex justify-center">
+              <svg class="w-20 h-20 pay-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path
+                    d="M64 24C64 10.7 74.7 0 88 0h45.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H234.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H552c13.3 0 24 10.7 24 24s-10.7 24-24 24H263.7c-34.6 0-64.3-24.6-70.7-58.5l-51.6-271c-.7-3.8-4-6.5-7.9-6.5H88C74.7 48 64 37.3 64 24zM225.6 240H523.2c10.9 0 20.4-7.3 23.2-17.8L584.7 80H195.1l30.5 160zM192 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM24 96h80c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80h96c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80H136c13.3 0 24 10.7 24 24s-10.7 24-24 24H24c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/>
+              </svg>
+            </div>
+            <div class="pay-label">
+              豪华充值
+            </div>
+            <div class="pay-info">
+              <div class="flex items-center">
+                <span class="pay-coin">72.00</span>
+              </div>
+              <div class="pay-info-split">/</div>
+              <div class="pay-info-money">
+                ￥68.00
+              </div>
+            </div>
+            <div class="px-4">
+              <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币永不清零</span>
+              </div>
+            </div>
+            <div class="flex mt-4">
+              <button class="pay-btn">立即购买</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
+<style lang="scss" scoped>
+div.pay-item {
+  @apply mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300;
+  button.pay-btn {
+    @apply btn btn-primary flex flex-1;
+  }
+
+  div.pay-info-split {
+    @apply text-base-content/20;
+  }
+
+  div.pay-info-money {
+    @apply flex items-end text-base-content/70 text-sm;
+  }
+
+  svg.pay-img {
+    @apply fill-base-content/50;
+  }
+
+  span.pay-coin {
+    @apply flex items-center;
+  }
+
+  &:hover {
+    @apply scale-110 sm:-translate-y-px sm:translate-x-px;
+    button.pay-btn {
+      @apply bg-base-100 text-primary;
+    }
+
+    div.pay-shadow {
+      @apply bg-primary;
+    }
+
+    svg.pay-img{
+      @apply fill-info;
+    }
+
+    span.pay-coin, div.pay-label, div.pay-info-money {
+      @apply text-info;
+    }
+  }
+
+  div.pay-shadow {
+    @apply transition-all duration-300 ease-in-out cursor-pointer dark-bg opacity-95 shadow-md rounded-2xl px-4 py-10;
+    div.pay-label {
+      @apply flex justify-center mt-4 text-sm font-medium;
+    }
+
+    div.pay-info {
+      @apply font-bold font-mono flex justify-center text-2xl mt-2;
+    }
+  }
+
 }
 </style>
