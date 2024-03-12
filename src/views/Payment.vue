@@ -30,7 +30,7 @@ import {ref} from 'vue'
               </svg>
             </div>
             <div class="pay-label">
-              超级充值
+              普通充值
             </div>
             <div class="pay-info">
               <div class="flex items-center">
@@ -44,7 +44,11 @@ import {ref} from 'vue'
             <div class="px-4">
               <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
                 <i class="icon icon-check"></i>
-                <span>金币可转赠</span>
+                <span>购买获得8.00金币</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠他人</span>
               </div>
               <div class="flex flex-row items-center space-x-2 text-base-content/40">
                 <i class="icon icon-check"></i>
@@ -80,7 +84,11 @@ import {ref} from 'vue'
             <div class="px-4">
               <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
                 <i class="icon icon-check"></i>
-                <span>金币可转赠</span>
+                <span>购买获得32.00金币</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠他人</span>
               </div>
               <div class="flex flex-row items-center space-x-2 text-base-content/40">
                 <i class="icon icon-check"></i>
@@ -115,7 +123,11 @@ import {ref} from 'vue'
             <div class="px-4">
               <div class="flex flex-row items-center space-x-2 text-base-content/40 mt-4">
                 <i class="icon icon-check"></i>
-                <span>金币可转赠</span>
+                <span>购买获得72.00金币</span>
+              </div>
+              <div class="flex flex-row items-center space-x-2 text-base-content/40">
+                <i class="icon icon-check"></i>
+                <span>金币可转赠他人</span>
               </div>
               <div class="flex flex-row items-center space-x-2 text-base-content/40">
                 <i class="icon icon-check"></i>
