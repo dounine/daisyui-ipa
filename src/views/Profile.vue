@@ -9,26 +9,6 @@ const data = ref({
   coin: '0.00',
   download: 0,
 })
-const functions = ref([
-  {
-    name: '我的提取',
-    icon: 'icon-appstore',
-    to: 'dump',
-    color: 'text-default'
-  }, {
-    name: '下载记录',
-    icon: 'icon-download',
-    to: 'download'
-  }, {
-    name: '推广奖币',
-    icon: 'icon-price',
-    to: 'ad'
-  }, {
-    name: '我的设置',
-    icon: 'icon-setting',
-    to: 'setting'
-  }
-])
 const query = async () => {
   proxy.axios.get('/user/info').then(res => {
     if (res.data.ok) {
@@ -53,9 +33,8 @@ onBeforeMount(async () => {
           </strong>
         </div>
         <div>
-          <button class="btn">
+          <button class="btn btn-ghost">
             <i class="icon icon-edit"></i>
-            修改资料
           </button>
         </div>
       </div>
@@ -66,28 +45,31 @@ onBeforeMount(async () => {
           </div>
           <img class="rounded-xl w-40 h-40" alt="用户头像" :src="data.icon"/>
         </div>
-        <div class="mt-6 flex-1 space-y-8">
+        <div class="mt-6 flex-1 space-y-6 sm:space-y-8">
           <div>
             <div class="font-bold">{{ data.name }}</div>
             <div class="flex flex-row text-accent">
-              <div>编号：<span>{{ data.id }}</span></div>
+              <div class="text-sm flex flex-row items-center space-x-1">
+                <i class="icon icon-id"></i>
+                <span>{{ data.id }}</span>
+              </div>
             </div>
           </div>
-          <div class="flex flex-row justify-between items-center">
+          <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between items-start sm:items-center">
             <div class="space-x-4">
-              <button class="btn btn-ghost btn-sm shadow rounded-full">
+              <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
                 <i class="icon icon-coin text-lg"></i>
-                <div class="text-yellow-600">￥{{ data.coin }}</div>
+                <div class="font-mono">￥{{ data.coin }}</div>
               </button>
-              <button class="btn btn-ghost btn-sm shadow rounded-full">
+              <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
                 <i class="icon icon-download text-lg"></i>
-                <div>{{ data.download }}</div>
+                <div class="font-mono">{{ data.download }}</div>
               </button>
             </div>
-            <div class="flex flex-row space-x-2">
-              <i class="icon icon-email text-lg"></i>
-              <i class="icon icon-qq text-lg"></i>
-              <i class="icon icon-wechat text-lg"></i>
+            <div class="flex flex-row space-x-4 text-xl">
+              <i class="icon icon-email"></i>
+              <i class="icon icon-qq"></i>
+              <i class="icon icon-wechat"></i>
             </div>
           </div>
         </div>
@@ -120,6 +102,9 @@ onBeforeMount(async () => {
                 <div class="text-base-content/30 text-sm">提取过的所有应用</div>
               </div>
             </div>
+            <div class="item-right">
+              <i class="icon icon-right"></i>
+            </div>
           </div>
         </div>
 
@@ -133,6 +118,9 @@ onBeforeMount(async () => {
                 <h1 class="item-name">下载记录</h1>
                 <div class="text-base-content/30 text-sm">记录下载应用</div>
               </div>
+            </div>
+            <div class="item-right">
+              <i class="icon icon-right"></i>
             </div>
           </div>
         </div>
@@ -148,6 +136,9 @@ onBeforeMount(async () => {
                 <div class="text-base-content/30 text-sm">邀请朋友注册使用可返币</div>
               </div>
             </div>
+            <div class="item-right">
+              <i class="icon icon-right"></i>
+            </div>
           </div>
         </div>
 
@@ -161,6 +152,9 @@ onBeforeMount(async () => {
                 <h1 class="item-name">我的设置</h1>
                 <div class="text-base-content/30 text-sm">定制化您的设置</div>
               </div>
+            </div>
+            <div class="item-right">
+              <i class="icon icon-right"></i>
             </div>
           </div>
         </div>
@@ -180,6 +174,10 @@ div.item {
       .item-name {
         @apply font-bold;
       }
+    }
+
+    div.item-right{
+      @apply md:hidden flex items-center;
     }
 
     div.item-icon {
