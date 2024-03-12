@@ -29,7 +29,10 @@ onBeforeMount(async () => {
            class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
         <div class="dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
-            <div class="flex flex-1 items-center min-w-14 max-w-14">
+            <div class="flex flex-1 items-center min-w-14 max-w-14 relative">
+              <div class="absolute inset-0 flex items-center justify-center -z-10">
+                <span class="loading loading-spinner loading-sm"></span>
+              </div>
               <img class="w-14 h-14 rounded-md"
                    :src="app.icon"
                    :title="app.name"
