@@ -31,7 +31,7 @@ onBeforeMount(async () => {
           <div class="flex flex-row flex-1 my-4">
             <div class="flex flex-1 items-center min-w-14 max-w-14 relative">
               <div class="absolute inset-0 flex items-center justify-center -z-10">
-                <span class="loading loading-spinner loading-sm"></span>
+                <span class="loading loading-spinner loading-sm text-base-content/30"></span>
               </div>
               <img class="w-14 h-14 rounded-md"
                    :src="app.icon"
