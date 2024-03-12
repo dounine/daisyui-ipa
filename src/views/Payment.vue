@@ -20,7 +20,10 @@ import {ref} from 'vue'
           支付的金额将兑换成相应的服务
         </div>
       </div>
-      <div class="flex flex-wrap">
+      <div class="flex lg:hidden">
+
+      </div>
+      <div class="flex-wrap hidden lg:flex">
         <div class="pay-item">
           <div class="pay-shadow">
             <div class="flex justify-center">
