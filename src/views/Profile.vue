@@ -116,7 +116,8 @@ onBeforeMount(async () => {
                 <i class="icon icon-appstore text-xl"></i>
               </div>
               <div class="item-label">
-                <strong class="md:truncate">我的提取</strong>
+                <h1 class="item-name">我的提取</h1>
+                <div class="text-base-content/30 text-sm">提取过的所有应用</div>
               </div>
             </div>
           </div>
@@ -129,7 +130,8 @@ onBeforeMount(async () => {
                 <i class="icon icon-download text-xl"></i>
               </div>
               <div class="item-label">
-                <strong class="md:truncate">下载记录</strong>
+                <h1 class="item-name">下载记录</h1>
+                <div class="text-base-content/30 text-sm">记录下载应用</div>
               </div>
             </div>
           </div>
@@ -142,7 +144,8 @@ onBeforeMount(async () => {
                 <i class="icon icon-price text-xl text-success"></i>
               </div>
               <div class="item-label">
-                <strong class="md:truncate text-success">推广送币</strong>
+                <h1 class="text-success item-name">推广送币</h1>
+                <div class="text-base-content/30 text-sm">邀请朋友注册使用可返币</div>
               </div>
             </div>
           </div>
@@ -155,7 +158,8 @@ onBeforeMount(async () => {
                 <i class="icon icon-price text-xl"></i>
               </div>
               <div class="item-label">
-                <strong class="md:truncate">我的设置</strong>
+                <h1 class="item-name">我的设置</h1>
+                <div class="text-base-content/30 text-sm">定制化您的设置</div>
               </div>
             </div>
           </div>
@@ -173,6 +177,9 @@ div.item {
     @apply dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4;
     &:hover {
       @apply transform -translate-y-px translate-x-px hover:shadow-md cursor-pointer;
+      .item-name {
+        @apply font-bold;
+      }
     }
 
     div.item-icon {
