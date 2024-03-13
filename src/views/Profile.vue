@@ -90,7 +90,7 @@ onBeforeMount(async () => {
           <!--          </button>-->
         </div>
       </div>
-      <div class="flex flex-wrap">
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 px-4 mt-4">
         <div class="item">
           <div class="item-shadow">
             <div class="flex flex-row flex-1 my-4">
@@ -166,14 +166,10 @@ onBeforeMount(async () => {
 
 <style lang="scss" scoped>
 div.item {
-  @apply w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300;
   div.item-shadow {
-    @apply dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4;
+    @apply duration-300 transition-all dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4;
     &:hover {
-      @apply transform -translate-y-px translate-x-px hover:shadow-md cursor-pointer;
-      .item-name {
-        @apply font-bold;
-      }
+      @apply -translate-y-px translate-x-px shadow-indigo-500/50 cursor-pointer;
     }
 
     div.item-right{
