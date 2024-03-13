@@ -146,7 +146,7 @@ onBeforeMount(async () => {
           <div class="item-shadow">
             <div class="flex flex-row flex-1 my-4">
               <div class="item-icon">
-                <i class="icon icon-price text-xl"></i>
+                <i class="icon icon-setting text-xl"></i>
               </div>
               <div class="item-label">
                 <h1 class="item-name">我的设置</h1>
