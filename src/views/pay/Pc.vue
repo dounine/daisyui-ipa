@@ -5,6 +5,15 @@ import {ref} from 'vue'
 
 <template>
   <div>
+    <dialog id="my_pay" class="modal bg-base-100 bg-opacity-0 backdrop-blur">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+        <h3 class="font-bold text-lg">Hello!</h3>
+        <p class="py-4">Press ESC key or click on ✕ button to close</p>
+      </div>
+    </dialog>
     <div class="flex flex-wrap">
       <div class="pay-item">
         <div class="pay-shadow">
@@ -45,7 +54,7 @@ import {ref} from 'vue'
             </div>
           </div>
           <div class="flex mt-4">
-            <button class="pay-btn btn btn-primary flex flex-1">立即购买</button>
+            <button class="pay-btn btn btn-primary flex flex-1" onclick="my_pay.showModal()">立即购买</button>
           </div>
         </div>
       </div>
@@ -135,7 +144,7 @@ import {ref} from 'vue'
             </div>
           </div>
           <div class="flex mt-4">
-            <button class="pay-btn btn btn-primary flex flex-1">立即购买</button>
+            <button class="pay-btn btn btn-primary flex flex-1" onclick="my_pay.showModal()">立即购买</button>
           </div>
         </div>
       </div>
