@@ -20,8 +20,8 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div class="fixed top-0 left-0 right-0 shadow-sm z-10 transition ease-in-out duration-300 backdrop-blur">
-    <div class="navbar max-w-screen-lg mx-auto bg-blur my-1 px-4 space-x-2">
+  <div class="fixed top-0 left-0 right-0 shadow-sm z-10 transition ease-in-out duration-300 backdrop-blur-sm">
+    <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
       <div class="flex-1">
         <RouterLink to="index" class="text-inherit hover:text-inherit">
           <div class="flex items-center logo cursor-pointer">
@@ -72,7 +72,7 @@ onBeforeMount(async () => {
             </label>
           </div>
           <div class="drawer-side">
-            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay drawer-box"></label>
+            <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
             <ul class="menu p-4 w-80 min-h-full bg-base-100 shadow-xl text-base-content">
               <li><a>Sidebar Item 1</a></li>
               <li><a>Sidebar Item 2</a></li>
@@ -85,8 +85,8 @@ onBeforeMount(async () => {
 </template>
 
 <style scoped>
-#my-drawer-4:checked ~ .drawer-side > .drawer-box {
-  @apply backdrop-blur-sm;
+#my-drawer-4:checked ~ .drawer-side > label.drawer-box {
+  @apply flex;
 }
 
 .drawer-toggle:checked ~ .drawer-side > .drawer-overlay {

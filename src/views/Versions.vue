@@ -47,17 +47,20 @@ onMounted(async () => {
                 <p class="font-bold">{{ data.info[item.value] }}</p>
               </div>
             </div>
-            <div class="flex justify-center ">
+            <div class="flex justify-center">
               <button
-                  class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
+                  class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-all duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
                 Download 下载
                 <i class="icon icon-download text-lg"></i>
               </button>
             </div>
           </div>
         </div>
-        <div class="flex flex-1 justify-center items-center">
-          <img :src="data.info.icon" class="max-w-60 max-h-60 rounded-2xl shadow-md" :alt="data.info.name"/>
+        <div class="flex flex-1 justify-center items-center relative">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="loading loading-spinner loading-sm text-primary"></span>
+          </div>
+          <img :src="data.info.icon" class="max-w-60 max-h-60 rounded-2xl shadow-md z-0" :alt="data.info.name"/>
         </div>
       </div>
     </div>
@@ -88,11 +91,10 @@ onMounted(async () => {
         <p>历史版本</p>
       </div>
     </div>
-    <div class="flex flex-wrap">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 px-4 mt-4">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
-      <div v-else v-for="version in data.versions"
-           class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
-        <div class="dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4">
+      <div v-else v-for="version in data.versions" class="transition-all duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
+        <div class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow sm:hover:shadow-indigo-500/50 rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">

@@ -5,7 +5,7 @@ import {ref} from 'vue'
 
 <template>
   <div>
-    <dialog id="my_pay" class="modal bg-base-100 bg-opacity-0 backdrop-blur">
+    <dialog id="my_pay" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
           <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
