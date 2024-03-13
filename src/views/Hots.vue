@@ -44,12 +44,12 @@ onBeforeMount(async () => {
                 <strong class="md:truncate">{{ app.name }}</strong>
               </div>
               <div class="flex items-center text-sm size">
-                <p class="text-accent">{{ app.country }}</p>
+                <span class="lowercase">{{ app.country }}</span>
               </div>
-              <div class="flex items-center space-x-1 text-accent text-sm font-mono">
-                <p>288MB</p>
-                <p class="border-l h-3 rotate-12"></p>
-                <p>1.2.2</p>
+              <div class="flex items-center space-x-1 text-sm font-mono">
+                <span>288MB</span>
+                <span class="border-l h-3 rotate-12"></span>
+                <span>1.2.2</span>
               </div>
             </div>
           </div>
