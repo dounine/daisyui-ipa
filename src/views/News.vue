@@ -70,9 +70,6 @@ onBeforeMount(async () => {
     @apply flex flex-row flex-1 my-4;
     .img-box {
       @apply flex flex-1 items-center min-w-14 max-w-14 relative;
-      .loading-box {
-        @apply absolute inset-0 flex items-center justify-center -z-10;
-      }
 
       .img {
         @apply w-14 h-14 rounded-md;

@@ -57,7 +57,7 @@ onMounted(async () => {
           </div>
         </div>
         <div class="flex flex-1 justify-center items-center relative">
-          <div class="absolute inset-0 flex items-center justify-center">
+          <div class="loading-box">
             <span class="loading loading-spinner loading-sm text-primary"></span>
           </div>
           <img :src="data.info.icon" class="max-w-60 max-h-60 rounded-2xl shadow-md z-0" :alt="data.info.name"/>
