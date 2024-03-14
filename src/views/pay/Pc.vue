@@ -10,6 +10,55 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
 
 <template>
   <div>
+    <dialog id="success_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <i class="icon icon-close text-lg"></i>
+          </button>
+        </form>
+        <h3 class="font-bold text-lg">支付成功</h3>
+        <div class="form-control mt-4">
+          <div class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-24 h-24 fill-green-600/70">
+              <path
+                  d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-center space-y-2 mt-8">
+            <div class="font-bold text-xl font-bold">
+              支付成功!
+            </div>
+            <div class="text-base-content/60">
+              您已成功支付，感谢您的购买!
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex flex-col space-y-2">
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">已付金额:</span>
+              <span>￥8.00</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">购买产品:</span>
+              <span>购买8.00个金币</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">订单编号:</span>
+              <span>123412431234</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row justify-center mt-8 space-x-10">
+          <button class="btn btn-outline">
+            返回首页
+          </button>
+          <button class="btn btn-neutral">
+            我的定单
+          </button>
+        </div>
+      </div>
+    </dialog>
     <dialog id="pay_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
@@ -41,7 +90,7 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
           </div>
         </div>
         <div class="flex flex-row justify-end mt-8">
-          <button class="btn">
+          <button class="btn" onclick="success_dialog.showModal()">
             取消支付
           </button>
         </div>
