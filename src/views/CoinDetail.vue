@@ -8,7 +8,7 @@ const data = ref({
 
 <template>
   <div class="px-4">
-    <div class="grid lg:grid-cols-3 gap-8">
+    <div class="grid lg:grid-cols-3 gap-8 mt-8">
       <div class="flex flex-row shadow rounded p-4 space-x-2">
         <div class="flex items-center">
           <svg class="w-8 h-8 fill-success" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +45,15 @@ const data = ref({
           <div class="text-base-content/50">我的收益</div>
           <div class="font-bold">{{ data.coin }}</div>
         </div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-between mt-8">
+      <div></div>
+      <div>
+        <button class="btn btn-outline btn-ghost rounded-full border-base-content/30 font-normal">
+          <i class="icon icon-filter"></i>
+          <span>搜索</span>
+        </button>
       </div>
     </div>
   </div>
