@@ -59,7 +59,9 @@ onBeforeMount(async () => {
             <div class="space-x-4">
               <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
                 <i class="icon icon-coin text-lg"></i>
-                <div class="font-mono">￥{{ data.coin }}</div>
+                <RouterLink to="coin_detail">
+                  <div class="font-mono">￥{{ data.coin }}</div>
+                </RouterLink>
               </button>
               <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
                 <i class="icon icon-download text-lg"></i>
