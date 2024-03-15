@@ -22,6 +22,104 @@ const menus = ref([
 
 <template>
   <div>
+    <dialog id="mobile_wait_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
+            <i class="icon icon-close text-lg"></i>
+          </button>
+        </form>
+        <h3 class="font-bold text-lg">支付中...</h3>
+        <div class="form-control mt-4">
+          <div class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-24 h-24 fill-green-600/70">
+              <path
+                  d="M0 488c0 13.3 10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24h-8V445c0-40.3-16-79-44.5-107.5L225.9 256l81.5-81.5C336 146 352 107.3 352 67V48h8c13.3 0 24-10.7 24-24s-10.7-24-24-24H24C10.7 0 0 10.7 0 24S10.7 48 24 48h8V67c0 40.3 16 79 44.5 107.5L158.1 256 76.5 337.5C48 366 32 404.7 32 445v19H24c-13.3 0-24 10.7-24 24zM84.1 96C81.4 86.7 80 76.9 80 67V48H304V67c0 9.9-1.4 19.7-4.1 29H84.1zM273.5 371.5C293 391 304 417.4 304 445v19H80V445c0-27.6 11-54 30.5-73.5L192 289.9l81.5 81.5z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-center space-y-2 mt-8">
+            <div class="font-bold text-xl font-bold">
+              等待支付...
+            </div>
+            <div class="text-base-content/60">
+              请耐心等待支付结果...
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex flex-col space-y-2">
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">付款金额:</span>
+              <span>￥8.00</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">购买产品:</span>
+              <span>购买8.00个金币</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">订单编号:</span>
+              <span>123412431234</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row justify-center mt-8 space-x-10">
+          <button class="btn btn-outline">
+            取消支付
+          </button>
+          <button class="btn btn-primary">
+            打开微信支付
+          </button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="mobile_success_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
+      <div class="modal-box">
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
+            <i class="icon icon-close text-lg"></i>
+          </button>
+        </form>
+        <h3 class="font-bold text-lg">支付成功</h3>
+        <div class="form-control mt-4">
+          <div class="flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-24 h-24 fill-green-600/70">
+              <path
+                  d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col items-center space-y-2 mt-8">
+            <div class="font-bold text-xl font-bold">
+              支付成功!
+            </div>
+            <div class="text-base-content/60">
+              您已成功支付，感谢您的购买!
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="flex flex-col space-y-2">
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">已付金额:</span>
+              <span>￥8.00</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">购买产品:</span>
+              <span>购买8.00个金币</span>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <span class="text-base-content/30">订单编号:</span>
+              <span>123412431234</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row justify-center mt-8 space-x-10">
+          <button class="btn btn-outline">
+            返回首页
+          </button>
+          <button class="btn btn-neutral">
+            我的定单
+          </button>
+        </div>
+      </div>
+    </dialog>
     <dialog id="my_mobile_pay" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
@@ -97,7 +195,7 @@ const menus = ref([
           </div>
         </div>
         <div>
-          <button class="btn bg-yellow-400 text-base-100" onclick="my_mobile_pay.showModal()">购买</button>
+          <button class="btn bg-yellow-400 text-base-100" onclick="mobile_wait_dialog.showModal()">购买</button>
         </div>
       </div>
     </div>

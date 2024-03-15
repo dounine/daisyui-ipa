@@ -13,7 +13,7 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
     <dialog id="success_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <button class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
             <i class="icon icon-close text-lg"></i>
           </button>
         </form>
@@ -62,7 +62,7 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
     <dialog id="pay_dialog" ref="pay_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <button class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
             <i class="icon icon-close text-lg"></i>
           </button>
         </form>
@@ -99,7 +99,7 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
     <dialog id="my_pay" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <button class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
             <i class="icon icon-close text-lg"></i>
           </button>
         </form>
