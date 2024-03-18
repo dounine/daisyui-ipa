@@ -1,27 +1,28 @@
 <script setup>
 import {onBeforeMount, onMounted, ref} from "vue"
-
-const dark = ref(localStorage.getItem('theme') === 'dark')
+const dark_name = 'dark'
+const light_name = 'light'
+const dark = ref(localStorage.getItem('theme') === dark_name)
 
 const darkChange = () => {
   let el = document.documentElement.attributes['data-theme'];
-  el.value = dark.value ? 'dark' : 'light'
-  localStorage.setItem('theme', dark.value ? 'dark' : 'light')
+  el.value = dark.value ? dark_name : light_name
+  localStorage.setItem('theme', dark.value ? dark_name : light_name)
 }
 onBeforeMount(async () => {
   let el = document.documentElement.attributes['data-theme'];
   if (!el) return;
-  if (localStorage.getItem('theme') === 'dark') {
-    el.value = 'dark'
+  if (localStorage.getItem('theme') === dark_name) {
+    el.value = dark_name
   } else {
-    el.value = 'light'
+    el.value = light_name
   }
 })
 </script>
 
 <template>
   <div class="fixed top-0 left-0 right-0 shadow-sm z-10 transition ease-in-out duration-300 backdrop-blur-sm">
-    <div class="navbar max-w-screen-lg mx-auto my-1 px-4 space-x-2">
+    <div class="navbar max-w-screen-xl mx-auto my-1 px-4 space-x-2">
       <div class="flex-1">
         <RouterLink to="index" class="text-inherit hover:text-inherit">
           <div class="flex items-center logo cursor-pointer">
@@ -102,9 +103,5 @@ onBeforeMount(async () => {
 
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>

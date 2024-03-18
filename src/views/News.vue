@@ -80,7 +80,7 @@ onBeforeMount(async () => {
       @apply flex-col flex-1 justify-around ml-2;
 
       .app-name {
-        @apply flex items-center w-full lg:w-44 md:max-w-60;
+        @apply flex items-center w-full xl:w-80 lg:w-44 md:max-w-60 xl:max-w-80;
       }
 
       .app-country {

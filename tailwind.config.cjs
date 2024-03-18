@@ -32,7 +32,7 @@ module.exports = {
                     ...require("daisyui/src/theming/themes")["[data-theme=light]"],
                     primary: 'rgb(79 70 229)'
                 },
-                dark:{
+                dark: {
                     ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
                     primary: 'rgb(79 70 229)'
                 }

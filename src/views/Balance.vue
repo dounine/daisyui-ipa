@@ -69,13 +69,18 @@ const result = ref([
             </div>
           </div>
         </div>
-        <div class="bg-info/10 rounded-xl p-4 ml-6">
-          <div class="font-medium">
-            帐户操作
-          </div>
+        <div>
           <div>
-            <button class="btn btn-sm btn-primary">充值</button>
-            <button class="btn btn-sm">转帐</button>
+
+          </div>
+          <div class="bg-info/10 rounded-xl p-4 ml-6 grid grid-cols-2">
+            <div class="font-medium">
+              帐户操作
+            </div>
+            <div>
+              <button class="btn btn-sm btn-primary">充值</button>
+              <button class="btn btn-sm">转帐</button>
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +107,7 @@ const result = ref([
                 <div class="font-bold">{{ item.name }}</div>
                 <div>{{ item.secondary }}</div>
               </div>
-              <div class="text-base-content/50">{{ item.coin }}</div>
+              <div class="text-base-content/50">￥{{ item.coin }}</div>
             </div>
           </div>
           <div class="flex items-center">
