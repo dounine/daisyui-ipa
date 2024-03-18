@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from 'vue'
+
 const data = ref({
   coin: '8.00',
 })
@@ -42,7 +43,7 @@ const result = ref([
   <div>
     <div class="px-4">
       <div class="grid grid-cols-2 mt-8">
-        <div class="flex flex-1 relative">
+        <div class="flex flex-1 relative max-w-screen-sm">
           <div class="absolute right-3 bg-[#5188EB] w-4 h-40 top-6 rounded-r-full -z-10"></div>
           <div class="absolute right-1 bg-[#E0738E] w-4 h-32 top-10 rounded-r-full -z-20"></div>
           <div
@@ -69,17 +70,23 @@ const result = ref([
             </div>
           </div>
         </div>
-        <div>
+        <div class="grid grid-cols-2">
           <div>
-
-          </div>
-          <div class="bg-info/10 rounded-xl p-4 ml-6 grid grid-cols-2">
-            <div class="font-medium">
-              帐户操作
+            <div>
+              累计充值：￥8.00
             </div>
             <div>
-              <button class="btn btn-sm btn-primary">充值</button>
-              <button class="btn btn-sm">转帐</button>
+              累计收益：￥0.00
+            </div>
+          </div>
+          <div class="bg-info/10 rounded-xl p-4 ml-6 grid grid-cols-2">
+            <div class="flex flex-row justify-between">
+              <div>
+                <button class="btn btn-sm btn-primary">充值</button>
+              </div>
+              <div>
+                <button class="btn btn-sm">转帐</button>
+              </div>
             </div>
           </div>
         </div>
