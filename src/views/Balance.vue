@@ -69,7 +69,7 @@ const result = ref([
             </div>
           </div>
         </div>
-        <div class="bg-info/10 rounded-xl p-4">
+        <div class="bg-info/10 rounded-xl p-4 ml-6">
           <div class="font-medium">
             帐户操作
           </div>
