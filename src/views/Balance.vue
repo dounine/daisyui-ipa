@@ -79,13 +79,19 @@ const result = ref([
               累计收益：￥0.00
             </div>
           </div>
-          <div class="bg-info/10 rounded-xl p-4 ml-6 grid grid-cols-2">
-            <div class="flex flex-row justify-between">
+          <div class="bg-info/10 rounded-xl p-4 ml-6">
+            <div class="flex flex-row justify-around">
               <div>
-                <button class="btn btn-sm btn-primary">充值</button>
+                <button class="btn btn-sm btn-primary">
+                  <i class="icon icon-pay"></i>
+                  <span>充值</span>
+                </button>
               </div>
               <div>
-                <button class="btn btn-sm">转帐</button>
+                <button class="btn btn-sm btn-ghost btn-outline">
+                  <i class="icon icon-transfer"></i>
+                  <span>转帐</span>
+                </button>
               </div>
             </div>
           </div>
