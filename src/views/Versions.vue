@@ -93,17 +93,17 @@ onMounted(async () => {
     </div>
     <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
-      <div v-else v-for="version in data.versions" class="transition-all duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
-        <div class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow sm:hover:shadow-indigo-500/50 rounded-md px-4">
+      <div v-else v-for="version in data.versions" class="transition-all duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
+        <div class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">
                 <strong class="md:truncate">{{ version.version }}</strong>
               </div>
               <div class="flex items-center text-sm size">
-                <p class="text-accent">{{ Common.sizeFormat(version.size) }}</p>
+                <p class="text-base-content/50">{{ Common.sizeFormat(version.size) }}</p>
               </div>
-              <div class="flex items-center space-x-1 text-accent text-sm font-mono">
+              <div class="flex items-center space-x-1 text-base-content/50 text-sm font-mono">
                 <p>{{ version.time }}</p>
               </div>
             </div>

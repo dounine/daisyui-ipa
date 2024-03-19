@@ -75,36 +75,58 @@ const search_change = async (e) => {
         </div>
       </div>
     </div>
-    <div class="flex flex-wrap">
+    <div class="grid gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="app in list"
-           class="w-full mx-4 md:mx-0 lg:w-1/3 md:w-1/2 py-2 md:p-4 transition-transform duration-300 hover:-translate-y-px hover:translate-x-px">
-        <div class="flex flex-row bg-base-100 opacity-95 shadow rounded-md">
-          <div class="flex flex-row flex-1 my-4 ml-4">
-            <div class="flex flex-1 items-center min-w-14 max-w-14">
-              <img class="w-14 h-14 rounded-md"
+           class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
+        <div class="flex dark-bg bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md justify-between">
+          <div class="flex flex-1 my-4 ml-4 space-x-2 md:truncate">
+            <div class="flex items-center min-w-14 max-w-14">
+              <img class="rounded-md"
                    :src="app.icon"
                    :title="app.name"
                    :alt="app.name"/>
             </div>
-            <div class="flex-col justify-around ml-2">
-              <div class="flex items-center w-full lg:w-40 md:max-w-60">
-                <strong class="md:truncate">{{ app.name }}</strong>
-              </div>
-              <div class="flex items-center text-sm size">
-                <p class="text-accent">{{ app.genres }}</p>
-              </div>
-              <div class="flex items-center space-x-1 text-accent text-sm font-mono">
+            <div class="w-3/4">
+              <div class="md:truncate">{{ app.name }}</div>
+              <div class="flex text-base-content/50 items-center text-sm size">{{ app.genres }}</div>
+              <div class="flex text-base-content/50 items-center space-x-1 text-accent text-sm font-mono">
                 <p>{{ Common.sizeFormat(app.size) }}</p>
                 <p class="border-l h-3 rotate-12"></p>
                 <p>{{ app.version }}</p>
               </div>
             </div>
           </div>
-          <div class="flex items-end mb-3.5">
-            <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2"></i>
+          <div class="flex items-end mb-3.5 mr-2">
+            <RouterLink to="versions" class="text-inherit hover:text-inherit">
+              <i class="icon icon-download transition-all duration-300 text-xl cursor-pointer hover:text-info text-primary"></i>
+            </RouterLink>
           </div>
         </div>
+        <!--        <div class="flex dark-bg bg-base-100 opacity-95 shadow rounded-md justify-between">-->
+        <!--          <div class="flex my-4 ml-4 space-x-2 truncate">-->
+        <!--            <div class="flex items-center min-w-14 max-w-14">-->
+        <!--              <img class="w-14 h-14 rounded-md"-->
+        <!--                   :src="app.icon"-->
+        <!--                   :title="app.name"-->
+        <!--                   :alt="app.name"/>-->
+        <!--            </div>-->
+        <!--            <div class="justify-around">-->
+        <!--              <div class="truncate">{{ app.name }}</div>-->
+        <!--              <div class="flex items-center text-sm size">-->
+        <!--                <p class="text-accent">{{ app.genres }}</p>-->
+        <!--              </div>-->
+        <!--              <div class="flex items-center space-x-1 text-accent text-sm font-mono">-->
+        <!--                <p>{{ Common.sizeFormat(app.size) }}</p>-->
+        <!--                <p class="border-l h-3 rotate-12"></p>-->
+        <!--                <p>{{ app.version }}</p>-->
+        <!--              </div>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div class="flex items-end mb-3.5">-->
+        <!--            <i class="icon icon-download text-xl cursor-pointer hover:text-info mr-2"></i>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
     </div>
   </div>

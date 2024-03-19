@@ -25,9 +25,9 @@ onBeforeMount(async () => {
         热门下载
       </strong>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
       <div v-for="app in list"
-           class="transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
+           class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
         <div class="item">
           <div class="info">
             <div class="img-box">
@@ -66,22 +66,21 @@ onBeforeMount(async () => {
 
 <style lang="scss" scoped>
 .item {
-  @apply dark-bg flex flex-row opacity-95 shadow transition-all duration-300 sm:hover:shadow-indigo-500/50 rounded-md px-4;
+  @apply dark-bg flex flex-row opacity-95 shadow transition-all duration-300 md:hover:shadow-indigo-500/50 rounded-md px-4;
   .info {
-    @apply flex flex-row flex-1 my-4;
+    @apply flex flex-row flex-1 my-4 space-x-2 md:truncate;
     .img-box {
-      @apply flex flex-1 items-center min-w-14 max-w-14 relative;
-
+      @apply flex items-center min-w-14 max-w-14 relative;
       .img {
-        @apply w-14 h-14 rounded-md;
+        @apply rounded-md;
       }
     }
 
     .data-box {
-      @apply flex-col flex-1 justify-around ml-2;
+      @apply w-3/4;
 
       .app-name {
-        @apply flex items-center w-full xl:w-80 lg:w-44 md:max-w-60 xl:max-w-80;
+        @apply md:truncate;
       }
 
       .app-country {
