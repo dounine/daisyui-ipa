@@ -23,7 +23,7 @@ const open_download = () => {
         <div class="form-control mt-4">
           <div class="flex justify-center">
             <ul class="steps w-full">
-              <li data-content="1" class="step step-neutral">未提取</li>
+              <li data-content="1" class="step step-primary">未提取</li>
               <li data-content="2" class="step step-neutral">提取中</li>
               <li data-content="3" class="step step-neutral">提取完成</li>
               <li data-content="✓" class="step step-neutral">可以下载</li>

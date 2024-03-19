@@ -34,7 +34,7 @@ const open_download = () => {
           </div>
           <div class="flex flex-col items-center mt-8">
             <div class="text-base-content/60">
-              提取完成后即可下载！
+              应用提取完成，可下载！
             </div>
           </div>
           <div class="divider"></div>
@@ -58,9 +58,9 @@ const open_download = () => {
           </div>
         </div>
         <div class="flex flex-row justify-center mt-8 space-x-10">
-          <button class="btn btn-primary">
+          <button class="btn btn-primary w-full">
             <i class="icon icon-download"></i>
-            <span>下载</span>
+            <span>立即下载</span>
           </button>
         </div>
       </div>
