@@ -1,5 +1,6 @@
 <script setup>
 import {getCurrentInstance, onMounted, ref} from "vue";
+import DumpView from "./dump/Dump.vue";
 import Common from "../util/common.js";
 
 const {proxy} = getCurrentInstance()
@@ -49,6 +50,7 @@ onMounted(async () => {
 
 <template>
   <div class="mt-10">
+    <DumpView/>
     <div class="flex flex-col py-4 flex-1">
       <div class="flex flex-row justify-between">
         <div class="font-mono text-3xl">
@@ -66,7 +68,7 @@ onMounted(async () => {
       <div class="divider"></div>
       <div class="flex flex-row justify-between">
         <div class="text-base-content/30">
-          {{ data.info.description}}
+          {{ data.info.description }}
         </div>
         <div class="flex flex-row justify-center text-base-content/70 space-x-2 break-keep">
           <div>
