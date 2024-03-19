@@ -75,11 +75,14 @@ const search_change = async (e) => {
         </div>
       </div>
     </div>
-    <div class="grid gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
-      <span v-if="loading" class="loading loading-spinner mx-auto"></span>
-      <div v-else v-for="app in list"
+    <div v-if="loading" class="text-center">
+      <span v-if="loading" class="loading loading-spinner"></span>
+    </div>
+    <div v-else class="grid gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2">
+      <div v-for="app in list"
            class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
-        <div class="flex dark-bg bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md justify-between">
+        <div
+            class="flex dark-bg bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md justify-between">
           <div class="flex flex-1 my-4 ml-4 space-x-2 md:truncate">
             <div class="flex items-center min-w-14 max-w-14">
               <img class="rounded-md"

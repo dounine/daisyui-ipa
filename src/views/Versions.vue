@@ -91,10 +91,14 @@ onMounted(async () => {
         <p>历史版本</p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
-      <span v-if="loading" class="loading loading-spinner mx-auto"></span>
-      <div v-else v-for="version in data.versions" class="transition-all duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
-        <div class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md px-4">
+    <div v-if="loading" class="text-center">
+      <span v-if="loading" class="loading loading-spinner"></span>
+    </div>
+    <div v-else class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
+      <div v-for="version in data.versions"
+           class="transition-all duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
+        <div
+            class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">
@@ -109,7 +113,7 @@ onMounted(async () => {
             </div>
           </div>
           <div class="flex items-end mb-3.5">
-            <i class="icon icon-download text-xl cursor-pointer hover:text-info text-primary"></i>
+            <i class="icon icon-download text-xl cursor-pointer transition-all duration-300 hover:text-info text-primary"></i>
           </div>
         </div>
       </div>
