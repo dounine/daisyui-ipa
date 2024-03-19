@@ -5,9 +5,30 @@ import Common from "../util/common.js";
 const {proxy} = getCurrentInstance()
 const loading = ref(false)
 const data = ref({
-  info: {},
-  versions: []
+  info: {
+    name: '方块消消乐2022',
+    genres: '休闲',
+    description: '消消乐',
+    free: true,
+    price: '免费',
+    minimumOsVersion: '14.0',
+    country: 'cn',
+    appid: '123434',
+    version: '1.0.0',
+    size: 12342134,
+    icon: ''
+  },
+  versions: [
+    {
+      version: '1.0.3',
+      size: 341234,
+      time: '2024-02-03 14:14:14',
+    }
+  ]
 })
+const country_format = (country) => {
+  return country === 'cn' ? '中国' : '美国'
+}
 const query = async () => {
   let res = null
   try {
@@ -28,59 +49,36 @@ onMounted(async () => {
 
 <template>
   <div class="mt-10">
-    <div class="hidden sm:flex flex-col bg-base-100 sm:bg-base-200 px-4 py-4 rounded-lg">
-      <div class="flex flex-col-reverse sm:flex-row">
-        <div class="flex-1 flex flex-row justify-center items-center">
-          <div class="flex flex-col space-y-6 max-w-screen-sm md:mt-4">
-            <h1 class="flex text-3xl font-bold max-w-80">{{ data.info.name }}</h1>
-            <p class="flex">{{ data.info.description }}</p>
-            <div class="flex flex-row space-x-4">
-              <div v-for="item in [
-                {name:'分类',value:'genres',icon:'icon-type'},
-                {name:'价格',value:'price',icon:'icon-price'},
-                {name:'地区',value:'country',icon:'icon-country'},
-                {name:'版本',value:'version',icon:'icon-version2'}
-                ]"
-                   class="border rounded-lg border-base-content py-6 px-2 md:px-6 flex flex-col items-center">
-                <i :class="'icon text-3xl '+item.icon || 'icon-type'"></i>
-                <p class="text-sm mt-3">{{ item.name }}</p>
-                <p class="font-bold">{{ data.info[item.value] }}</p>
-              </div>
-            </div>
-            <div class="flex justify-center">
-              <button
-                  class="btn hover:text-info hover:bg-inherit hover:border-info text-primary btn-outline kbd px-4 transition-all duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
-                Download 下载
-                <i class="icon icon-download text-lg"></i>
-              </button>
-            </div>
-          </div>
+    <div class="flex flex-col py-4 flex-1">
+      <div class="flex flex-row justify-between">
+        <div class="font-mono text-3xl">
+          {{ data.info.name }}
         </div>
-        <div class="flex flex-1 justify-center items-center relative">
+        <div class="flex justify-center items-center relative">
           <div class="loading-box">
             <span class="loading loading-spinner loading-sm text-primary"></span>
           </div>
-          <img :src="data.info.icon" class="max-w-60 max-h-60 rounded-2xl shadow-md z-0" :alt="data.info.name"/>
+          <div>
+            <img :src="data.info.icon" class="max-w-10 max-h-10 mask mask-squircle z-0" :alt="data.info.name"/>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="flex flex-col sm:hidden relative">
-      <div class="w-full h-full">
-        <img :src="data.info.icon" class="w-full h-full rounded-t-2xl" :alt="data.info.name"/>
-        <div class="flex flex-row shadow-xl rounded-b-2xl">
-          <div class="flex flex-row flex-1 items-center">
-            <div>
-              <img :src="data.info.icon" class="w-10 h-10 rounded-lg m-4" :alt="data.info.name"/>
-            </div>
-            <div class="flex flex-col">
-              <p class="font-bold text-xl">{{ data.info.name }}</p>
-              <p class="text-base-content/80 text-lg">{{ data.info.version }}</p>
-            </div>
+      <div class="divider"></div>
+      <div class="flex flex-row justify-between">
+        <div class="text-base-content/30">
+          {{ data.info.description}}
+        </div>
+        <div class="flex flex-row justify-center text-base-content/70 space-x-2 break-keep">
+          <div>
+            {{ country_format(data.info.country) }}
           </div>
-          <div class="flex items-center">
-            <button class="btn btn-ghost">
-              <i class="icon icon-download text-2xl text-primary"></i>
-            </button>
+          <div class="text-base-content/30">/</div>
+          <div>
+            {{ data.info.genres }}
+          </div>
+          <div class="text-base-content/30">/</div>
+          <div>
+            {{ data.info.price }}
           </div>
         </div>
       </div>
@@ -88,7 +86,7 @@ onMounted(async () => {
     <div class="mt-10">
       <div class="font-medium items-center flex space-x-2">
         <i class="icon icon-version"></i>
-        <p>历史版本</p>
+        <p>应用版本</p>
       </div>
     </div>
     <div v-if="loading" class="text-center">
