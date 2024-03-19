@@ -42,12 +42,12 @@ const result = ref([
 <template>
   <div>
     <div class="px-4">
-      <div class="grid grid-cols-2 mt-8">
+      <div class="grid sm:grid-flow-row sm:grid-cols-2 gap-4 mt-8">
         <div class="flex flex-1 relative max-w-screen-sm">
           <div class="absolute right-3 bg-[#5188EB] w-4 h-40 top-6 rounded-r-full -z-10"></div>
           <div class="absolute right-1 bg-[#E0738E] w-4 h-32 top-10 rounded-r-full -z-20"></div>
           <div
-              class="blance-card w-screen max-w-screen-sm h-52 flex flex-row rounded-xl p-6 mr-6">
+              class="blance-card w-full max-w-screen-sm h-52 flex flex-row rounded-xl p-6 mr-6">
             <div class="flex flex-1 flex-col">
               <div class="text-sm text-accent">13:00 / 2016-08-12</div>
               <div class="font-medium text-white mt-1">Coin account 金币帐号</div>
@@ -70,29 +70,21 @@ const result = ref([
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2">
-          <div>
+        <div class="flex flex-col justify-between max-w-screen-sm space-y-2">
+          <div class="flex flex-col rounded-xl dark-bg bg-[#EEF8F0] p-4 space-y-1">
             <div>
-              累计充值：￥8.00
+              累计充值
             </div>
-            <div>
-              累计收益：￥0.00
+            <div class="font-bold font-mono">
+              ￥8.00
             </div>
           </div>
-          <div class="bg-info/10 rounded-xl p-4 ml-6">
-            <div class="flex flex-row justify-around">
-              <div>
-                <button class="btn btn-sm btn-primary">
-                  <i class="icon icon-pay"></i>
-                  <span>充值</span>
-                </button>
-              </div>
-              <div>
-                <button class="btn btn-sm btn-ghost btn-outline">
-                  <i class="icon icon-transfer"></i>
-                  <span>转帐</span>
-                </button>
-              </div>
+          <div class="flex flex-col rounded-xl dark-bg bg-[#FDF3E7] p-4 space-y-1">
+            <div>
+              累计收益
+            </div>
+            <div class="font-bold font-mono">
+              ￥0.00
             </div>
           </div>
         </div>
@@ -100,7 +92,16 @@ const result = ref([
     </div>
     <div>
       <div class="flex flex-row justify-between mt-8 px-4">
-        <div></div>
+        <div class="flex flex-row space-x-4">
+          <button class="btn btn-primary">
+            <i class="icon icon-pay"></i>
+            <span>充值</span>
+          </button>
+          <button class="btn">
+            <i class="icon icon-transfer"></i>
+            <span>转赠</span>
+          </button>
+        </div>
         <div>
           <button class="btn btn-outline btn-ghost rounded-full border-base-content/30 font-normal">
             <i class="icon icon-filter"></i>
