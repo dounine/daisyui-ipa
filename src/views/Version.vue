@@ -50,7 +50,8 @@ onMounted(async () => {
 
 <template>
   <div class="mt-10">
-    <DumpView/>
+    <router-view></router-view>
+    <!--    <DumpView/>-->
     <div class="flex flex-col py-4 flex-1">
       <div class="flex flex-row justify-between">
         <div class="font-mono text-3xl">
@@ -113,7 +114,9 @@ onMounted(async () => {
             </div>
           </div>
           <div class="flex items-end mb-3.5">
-            <i class="icon icon-download text-xl cursor-pointer transition-all duration-300 hover:text-info text-primary"></i>
+            <RouterLink to="version/1.0.0/dump">
+              <i class="icon icon-download text-xl cursor-pointer transition-all duration-300 hover:text-info text-primary"></i>
+            </RouterLink>
           </div>
         </div>
       </div>

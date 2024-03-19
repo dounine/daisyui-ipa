@@ -23,9 +23,21 @@ const routes = [
         component: () => import("./views/Search.vue"),
     },
     {
-        path: "/versions",
-        name: "versions",
-        component: () => import("./views/Versions.vue"),
+        path: "/:appid/version",
+        name: "version",
+        component: () => import("./views/Version.vue"),
+        children: [
+            {
+                path: ':version/dump',
+                name: 'version_dump',
+                component: () => import('./views/dump/Dump.vue')
+            },
+            {
+                path: ':version/download',
+                name: 'version_download',
+                component: () => import('./views/dump/Download.vue')
+            }
+        ]
     },
     {
         path: "/profile",

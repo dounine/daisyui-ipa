@@ -7,14 +7,17 @@ onMounted(() => {
 })
 const open_download = () => {
   proxy.$router.push({
-    name: 'version_download',
+    name: 'download',
+    query: {
+      u: localStorage.getItem('userid') || ''
+    }
   })
 }
 </script>
 
 <template>
   <div>
-    <dialog id="dump_dialog" ref="dump_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
+    <dialog id="download_dialog" ref="dump_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
         <button @click="proxy.$router.back()" class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
           <i class="icon icon-close text-lg"></i>
@@ -55,7 +58,7 @@ const open_download = () => {
           </div>
         </div>
         <div class="flex flex-row justify-center mt-8 space-x-10">
-          <button @click="open_download" class="btn btn-primary">
+          <button class="btn btn-primary">
             <i class="icon icon-download"></i>
             <span>下载</span>
           </button>

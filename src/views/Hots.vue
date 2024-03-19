@@ -54,7 +54,7 @@ onBeforeMount(async () => {
             </div>
           </div>
           <div class="download-box">
-            <RouterLink to="versions" class="download-link">
+            <RouterLink to="1/version" class="download-link">
               <i class="icon icon-download download-icon"></i>
             </RouterLink>
           </div>
