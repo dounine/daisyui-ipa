@@ -70,17 +70,27 @@ const result = ref([
             </div>
           </div>
         </div>
+        <div class="sm:hidden flex flex-row justify-between space-x-4 shadow p-4 rounded-xl">
+          <button class="btn btn-primary">
+            <i class="icon icon-pay"></i>
+            <span>充值</span>
+          </button>
+          <button class="btn">
+            <i class="icon icon-transfer"></i>
+            <span>转赠</span>
+          </button>
+        </div>
         <div class="flex flex-col justify-between max-w-screen-sm space-y-2">
-          <div class="flex flex-col rounded-xl dark-bg bg-[#EEF8F0] p-4 space-y-1">
-            <div>
+          <div class="flex flex-col rounded-xl dark-bg shadow p-4 space-y-1">
+            <div class="text-base-content/50">
               累计充值
             </div>
             <div class="font-bold font-mono">
               ￥8.00
             </div>
           </div>
-          <div class="flex flex-col rounded-xl dark-bg bg-[#FDF3E7] p-4 space-y-1">
-            <div>
+          <div class="flex flex-col rounded-xl dark-bg shadow p-4 space-y-1">
+            <div class="text-base-content/50">
               累计收益
             </div>
             <div class="font-bold font-mono">
@@ -91,16 +101,18 @@ const result = ref([
       </div>
     </div>
     <div>
-      <div class="flex flex-row justify-between mt-8 px-4">
-        <div class="flex flex-row space-x-4">
-          <button class="btn btn-primary">
-            <i class="icon icon-pay"></i>
-            <span>充值</span>
-          </button>
-          <button class="btn">
-            <i class="icon icon-transfer"></i>
-            <span>转赠</span>
-          </button>
+      <div class="flex  flex-row justify-between mt-8 px-4">
+        <div>
+          <div class="sm:flex hidden flex-row space-x-8">
+            <button class="btn btn-primary">
+              <i class="icon icon-pay"></i>
+              <span>充值</span>
+            </button>
+            <button class="btn">
+              <i class="icon icon-transfer"></i>
+              <span>转赠</span>
+            </button>
+          </div>
         </div>
         <div>
           <button class="btn btn-outline btn-ghost rounded-full border-base-content/30 font-normal">
