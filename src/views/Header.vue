@@ -24,7 +24,7 @@ onBeforeMount(async () => {
   <div class="fixed top-0 left-0 right-0 shadow-sm z-10 transition ease-in-out duration-300 backdrop-blur-sm">
     <div class="navbar max-w-screen-xl mx-auto my-1 space-x-2">
       <div class="flex-1">
-        <RouterLink to="index" class="text-inherit hover:text-inherit">
+        <RouterLink to="/index" class="text-inherit hover:text-inherit">
           <div class="flex items-center logo cursor-pointer">
             <i class="icon icon-apple text-3xl"></i>
             <span class="font-bold text-lg">

@@ -26,10 +26,10 @@ const open_download = () => {
         <div class="form-control mt-4">
           <div class="flex justify-center">
             <ul class="steps w-full">
-              <li data-content="1" class="step step-neutral">未提取</li>
-              <li data-content="2" class="step step-neutral">提取中</li>
-              <li data-content="3" class="step step-neutral">提取完成</li>
-              <li data-content="✓" class="step step-neutral">可以下载</li>
+              <li data-content="1" class="step step-primary">未提取</li>
+              <li data-content="2" class="step step-primary">提取中</li>
+              <li data-content="3" class="step step-primary">提取完成</li>
+              <li data-content="✓" class="step step-primary">可以下载</li>
             </ul>
           </div>
           <div class="flex flex-col items-center mt-8">
@@ -37,7 +37,7 @@ const open_download = () => {
               提取完成后即可下载！
             </div>
           </div>
-          <progress class="progress progress-primary my-6" value="20" max="100"></progress>
+          <div class="divider"></div>
           <div class="flex flex-col space-y-2">
             <div class="flex flex-row space-x-2">
               <span class="text-base-content/30">应用名称:</span>
@@ -53,7 +53,7 @@ const open_download = () => {
             </div>
             <div class="flex flex-row space-x-2">
               <span class="text-base-content/30">当前状态:</span>
-              <span>未提取</span>
+              <span>可下载</span>
             </div>
           </div>
         </div>
@@ -61,10 +61,6 @@ const open_download = () => {
           <button class="btn btn-primary">
             <i class="icon icon-download"></i>
             <span>下载</span>
-          </button>
-          <button class="btn btn-primary">
-            <i class="icon icon-circle-right"></i>
-            <span>提取</span>
           </button>
         </div>
       </div>

@@ -28,15 +28,22 @@ const routes = [
         component: () => import("./views/Version.vue"),
         children: [
             {
-                path: ':version/dump',
-                name: 'version_dump',
-                component: () => import('./views/dump/Dump.vue')
+                path: ':version',
+                name: 'version_info',
+                component: () => import('./views/version/Info.vue'),
+                children: [
+                    {
+                        path: 'dump',
+                        name: 'version_info_dump',
+                        component: () => import('./views/version/Dump.vue')
+                    },
+                    {
+                        path: 'download',
+                        name: 'version_info_download',
+                        component: () => import('./views/version/Download.vue')
+                    }
+                ]
             },
-            {
-                path: ':version/download',
-                name: 'version_download',
-                component: () => import('./views/dump/Download.vue')
-            }
         ]
     },
     {

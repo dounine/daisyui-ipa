@@ -1,6 +1,6 @@
 <script setup>
 import {getCurrentInstance, onMounted, ref} from "vue";
-import DumpView from "./dump/Dump.vue";
+import DumpView from "./version/Dump.vue";
 import Common from "../util/common.js";
 
 const {proxy} = getCurrentInstance()
@@ -51,7 +51,6 @@ onMounted(async () => {
 <template>
   <div class="mt-10">
     <router-view></router-view>
-    <!--    <DumpView/>-->
     <div class="flex flex-col py-4 flex-1">
       <div class="flex flex-row justify-between">
         <div class="font-mono text-3xl">

@@ -7,7 +7,7 @@ onMounted(() => {
 })
 const open_download = () => {
   proxy.$router.push({
-    name: 'version_download',
+    name: 'version_info_download',
   })
 }
 </script>
@@ -55,10 +55,12 @@ const open_download = () => {
           </div>
         </div>
         <div class="flex flex-row justify-center mt-8 space-x-10">
-          <button @click="open_download" class="btn btn-primary">
-            <i class="icon icon-download"></i>
-            <span>下载</span>
-          </button>
+          <RouterLink to="download">
+            <button class="btn btn-primary">
+              <i class="icon icon-download"></i>
+              <span>下载</span>
+            </button>
+          </RouterLink>
           <button class="btn btn-primary">
             <i class="icon icon-circle-right"></i>
             <span>提取</span>
