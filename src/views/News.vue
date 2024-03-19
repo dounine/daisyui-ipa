@@ -18,13 +18,13 @@ onBeforeMount(async () => {
 
 <template>
   <div class="space-y-4">
-    <div class="flex items-center mx-4 space-x-1">
+    <div class="flex items-center space-x-1">
       <i class="icon icon-new text-lg"></i>
       <strong class="text-sm">
         最新提取
       </strong>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 px-4">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
       <div v-for="app in list"
            class="transition-transform duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
         <div class="item">

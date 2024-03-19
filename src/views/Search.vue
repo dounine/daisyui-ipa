@@ -48,7 +48,7 @@ const search_change = async (e) => {
 </script>
 
 <template>
-  <div class="mx-4 mt-10 space-y-10">
+  <div class="mt-10 space-y-10">
     <div class="flex flex-row flex-1 join my-2">
       <label class="input shadow-md flex items-center gap-2 flex-1 rounded-r-none">
         <i class="icon icon-search text-md"></i>

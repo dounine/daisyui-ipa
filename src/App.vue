@@ -18,14 +18,14 @@ onBeforeMount(async () => {
 
 <template>
   <div>
-    <Header/>
+    <Header class="px-4"/>
     <div id="viewBox" class="overflow-y-scroll min-h-svh relative">
       <div class="h-20"></div>
       <div class="max-w-screen-xl mx-auto flex-1 pb-28">
-        <router-view></router-view>
+        <router-view class="px-4"></router-view>
       </div>
       <div class="max-w-screen-xl mx-auto mt-0 xl:mt-24 absolute bottom-0 left-0 right-0">
-        <Footer/>
+        <Footer class="px-4"/>
       </div>
     </div>
   </div>

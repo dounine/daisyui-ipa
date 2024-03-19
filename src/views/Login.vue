@@ -13,9 +13,9 @@ const count = ref(0)
     <div class="hidden md:flex items-center">
       <img alt="login" class="object-cover w-full h-2/3 rounded-xl" src="../assets/login-bg.png"/>
     </div>
-    <div class="flex items-center">
+    <div class="flex sm:items-center">
       <div class="flex-col space-y-10 w-screen md:max-w-screen-sm w-full">
-        <div class="flex flex-col p-10 bg-base-100 space-y-6 rounded-lg">
+        <div class="flex flex-col p-4 bg-base-100 space-y-6 rounded-lg">
           <div class="flex flex-col">
             <div class="space-y-8">
               <div class="flex">

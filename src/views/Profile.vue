@@ -25,7 +25,7 @@ onBeforeMount(async () => {
 
 <template>
   <div>
-    <div class="px-4">
+    <div>
       <div class="flex flex-row justify-between items-center">
         <div>
           <strong class="text-sm">
@@ -43,7 +43,7 @@ onBeforeMount(async () => {
           <div class="absolute inset-0 flex items-center justify-center -z-10">
             <span class="loading loading-spinner loading-sm"></span>
           </div>
-          <img class="rounded-xl w-40 h-40" alt="用户头像" :src="data.icon"/>
+          <img class="mask mask-squircle w-40 h-40" alt="用户头像" :src="data.icon"/>
         </div>
         <div class="mt-6 flex-1 space-y-6 sm:space-y-8">
           <div>
@@ -57,12 +57,12 @@ onBeforeMount(async () => {
           </div>
           <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:justify-between items-start sm:items-center">
             <div class="space-x-4">
-              <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
-                <i class="icon icon-coin text-lg"></i>
-                <RouterLink to="coin_detail">
+              <RouterLink to="balance">
+                <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
+                  <i class="icon icon-coin text-lg"></i>
                   <div class="font-mono">￥{{ data.coin }}</div>
-                </RouterLink>
-              </button>
+                </button>
+              </RouterLink>
               <button class="dark-bg btn btn-ghost btn-sm shadow rounded-full">
                 <i class="icon icon-download text-lg"></i>
                 <div class="font-mono">{{ data.download }}</div>
@@ -79,7 +79,7 @@ onBeforeMount(async () => {
       <div class="divider mt-8"></div>
     </div>
     <div>
-      <div class="flex flex-row justify-between items-center px-4">
+      <div class="flex flex-row justify-between items-center">
         <div>
           <h1>
             功能中心
@@ -92,7 +92,7 @@ onBeforeMount(async () => {
           <!--          </button>-->
         </div>
       </div>
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 px-4 mt-4">
+      <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
         <div class="item">
           <div class="item-shadow">
             <div class="flex flex-row flex-1 my-4">
@@ -174,7 +174,7 @@ div.item {
       @apply -translate-y-px translate-x-px shadow-indigo-500/50 cursor-pointer;
     }
 
-    div.item-right{
+    div.item-right {
       @apply md:hidden flex items-center;
     }
 

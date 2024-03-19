@@ -7,8 +7,7 @@ import PayPc from './pay/Pc.vue'
 
 <template>
   <div>
-
-    <div class="px-4 space-y-4">
+    <div class="space-y-4">
       <div class="flex flex-row mt-8">
         <div class="flex flex-row items-center space-x-1">
           <i class="icon icon-crown text-lg"></i>

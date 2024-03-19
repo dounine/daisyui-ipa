@@ -41,7 +41,7 @@ const result = ref([
 
 <template>
   <div>
-    <div class="px-4">
+    <div>
       <div class="grid sm:grid-flow-row sm:grid-cols-2 gap-4 mt-8">
         <div class="flex flex-1 relative max-w-screen-sm">
           <div class="absolute right-3 bg-[#5188EB] w-4 h-40 top-6 rounded-r-full -z-10"></div>
@@ -70,7 +70,7 @@ const result = ref([
             </div>
           </div>
         </div>
-        <div class="sm:hidden flex flex-row justify-between space-x-4 shadow p-4 rounded-xl">
+        <div class="sm:hidden flex flex-row justify-between space-x-4 p-4 rounded-xl">
           <button class="btn btn-primary">
             <i class="icon icon-pay"></i>
             <span>充值</span>
@@ -101,7 +101,7 @@ const result = ref([
       </div>
     </div>
     <div>
-      <div class="flex  flex-row justify-between mt-8 px-4">
+      <div class="flex flex-row justify-between mt-8">
         <div>
           <div class="sm:flex hidden flex-row space-x-8">
             <button class="btn btn-primary">
@@ -121,8 +121,8 @@ const result = ref([
           </button>
         </div>
       </div>
-      <div class="grid gap-4 px-4 mt-4">
-        <div v-for="item in result" class="dark-bg flex flex-row justify-between shadow px-4 py-2 rounded">
+      <div class="grid gap-4 mt-4">
+        <div v-for="item in result" class="dark-bg flex flex-row justify-between shadow p-4 rounded-xl">
           <div class="flex flex-row space-x-2">
             <div class="flex items-center">
               <i class="icon icon-download"></i>

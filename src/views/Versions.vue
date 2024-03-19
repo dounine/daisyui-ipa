@@ -64,7 +64,7 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div class="flex flex-col sm:hidden px-4 relative">
+    <div class="flex flex-col sm:hidden relative">
       <div class="w-full h-full">
         <img :src="data.info.icon" class="w-full h-full rounded-t-2xl" :alt="data.info.name"/>
         <div class="flex flex-row shadow-xl rounded-b-2xl">
@@ -85,13 +85,13 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div class="px-4 mt-10">
+    <div class="mt-10">
       <div class="font-medium items-center flex space-x-2">
         <i class="icon icon-version"></i>
         <p>历史版本</p>
       </div>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 px-4 mt-4">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
       <span v-if="loading" class="loading loading-spinner mx-auto"></span>
       <div v-else v-for="version in data.versions" class="transition-all duration-300 sm:hover:-translate-y-px sm:hover:translate-x-px">
         <div class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow sm:hover:shadow-indigo-500/50 rounded-md px-4">
