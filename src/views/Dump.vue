@@ -87,22 +87,22 @@ onBeforeMount(async () => {
               <div class="avatar-group -space-x-4">
                 <div class="avatar">
                   <div class="w-8">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                    <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
                   </div>
                 </div>
                 <div class="avatar">
                   <div class="w-8">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                    <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
                   </div>
                 </div>
                 <div class="avatar">
                   <div class="w-8">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                    <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
                   </div>
                 </div>
                 <div class="avatar">
                   <div class="w-8">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                    <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
                   </div>
                 </div>
               </div>
