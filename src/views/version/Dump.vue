@@ -6,11 +6,6 @@ const dump_dialog = ref(null)
 onMounted(() => {
   dump_dialog.value.showModal()
 })
-const open_download = () => {
-  proxy.$router.push({
-    name: 'version_info_download',
-  })
-}
 const close_dialog = () => {
   dump_dialog.value.close()
   setTimeout(() => {

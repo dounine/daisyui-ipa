@@ -7,14 +7,6 @@ const dump_dialog = ref(null)
 onMounted(() => {
   dump_dialog.value.showModal()
 })
-const open_download = () => {
-  proxy.$router.push({
-    name: 'download',
-    query: {
-      u: localStorage.getItem('userid') || ''
-    }
-  })
-}
 const close_dialog = () => {
   dump_dialog.value.close()
   setTimeout(() => {
@@ -34,21 +26,6 @@ const close_dialog = () => {
         </button>
         <h3 class="font-bold text-lg">应用下载</h3>
         <div class="form-control mt-4">
-<!--          <div class="flex flex-col space-y-2">-->
-<!--            <div class="flex flex-row space-x-2">-->
-<!--              <span class="text-base-content/50">应用:</span>-->
-<!--              <span class="font-medium">方块消消乐</span>-->
-<!--            </div>-->
-<!--            <div class="flex flex-row space-x-2">-->
-<!--              <span class="text-base-content/50">版本:</span>-->
-<!--              <span class="font-medium">1.0.0</span>-->
-<!--            </div>-->
-<!--            <div class="flex flex-row space-x-2">-->
-<!--              <span class="text-base-content/50">大小:</span>-->
-<!--              <span class="font-mono font-medium">23.23GB</span>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="divider"></div>-->
           <div class="form-control divide-y divide-base-200">
             <label class="label cursor-pointer py-4">
               <div class="flex flex-row space-x-2">
