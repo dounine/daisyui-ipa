@@ -23,6 +23,11 @@ const routes = [
         component: () => import("./views/Search.vue"),
     },
     {
+        path: '/dump',
+        name: 'dump',
+        component: () => import('./views/Dump.vue')
+    },
+    {
         path: "/:appid/version",
         name: "version",
         component: () => import("./views/Version.vue"),

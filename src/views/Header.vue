@@ -1,5 +1,6 @@
 <script setup>
 import {onBeforeMount, onMounted, ref} from "vue"
+
 const dark_name = 'dark'
 const light_name = 'light'
 const dark = ref(localStorage.getItem('theme') === dark_name)
@@ -37,12 +38,14 @@ onBeforeMount(async () => {
         <!--        <button class="btn btn-ghost">-->
         <!--          热门应用-->
         <!--        </button>-->
-        <button class="btn btn-ghost normal-case">
-          AppStore 应用提取
-        </button>
+        <RouterLink to="/dump" class="text-inherit hover:text-inherit">
+          <button class="btn btn-ghost normal-case">
+            AppStore 应用提取
+          </button>
+        </RouterLink>
       </div>
       <div>
-        <RouterLink to="search" class="text-inherit hover:text-inherit">
+        <RouterLink to="/search" class="text-inherit hover:text-inherit">
           <div class="hover:text-inherit btn btn-ghost">
             <i class="icon icon-search text-xl"></i>
           </div>
