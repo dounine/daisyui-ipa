@@ -1,5 +1,6 @@
 <script setup>
 import {getCurrentInstance, onMounted, ref} from 'vue'
+
 const {proxy} = getCurrentInstance()
 const dump_dialog = ref(null)
 onMounted(() => {
@@ -10,13 +11,21 @@ const open_download = () => {
     name: 'version_info_download',
   })
 }
+const close_dialog = () => {
+  dump_dialog.value.close()
+  setTimeout(() => {
+    proxy.$router.push({
+      name: 'version',
+    })
+  }, 300)
+}
 </script>
 
 <template>
   <div>
     <dialog id="dump_dialog" ref="dump_dialog" class="modal bg-base-100 bg-opacity-0 backdrop-blur-sm">
       <div class="modal-box">
-        <button @click="proxy.$router.back()" class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
+        <button @click="close_dialog" class="btn btn-sm btn-circle outline-none btn-ghost absolute right-2 top-2">
           <i class="icon icon-close text-lg"></i>
         </button>
         <h3 class="font-bold text-lg">应用下载</h3>
@@ -26,7 +35,7 @@ const open_download = () => {
               <li data-content="1" class="step step-primary">未提取</li>
               <li data-content="2" class="step step-neutral">提取中</li>
               <li data-content="3" class="step step-neutral">提取完成</li>
-              <li data-content="✓" class="step step-neutral">可以下载</li>
+              <li data-content="✓" class="step step-neutral">下载</li>
             </ul>
           </div>
           <div class="flex flex-col items-center mt-8">
