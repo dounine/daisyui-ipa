@@ -84,7 +84,7 @@ onBeforeMount(async () => {
                 <span class="text-base-content/30">/</span>
                 <span>排队中</span>
               </div>
-              <div class="avatar-group -space-x-4">
+              <div class="avatar-group -space-x-4 cursor-pointer hover:shadow hover:rounded-full hover:shadow-indigo-500/50">
                 <div class="avatar">
                   <div class="w-8">
                     <img alt="" title="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
