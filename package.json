@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "autoprefixer": "^10.4.17",
+    "code-inspector-plugin": "^0.10.1",
     "cross-env": "^7.0.3",
     "daisyui": "3.9.4",
     "mockjs": "^1.1.0",
