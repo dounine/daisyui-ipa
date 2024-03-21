@@ -63,6 +63,9 @@ html #app {
 @layer components {
   .loading-box {
     @apply absolute inset-0 flex items-center justify-center -z-10;
+    .loading-box-spinner{
+      @apply loading loading-spinner loading-sm text-base-content/30;
+    }
   }
 
   html[data-theme="dark"] body {

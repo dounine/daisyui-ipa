@@ -1,37 +1,43 @@
 <script setup>
-import {getCurrentInstance, onBeforeMount, ref} from 'vue'
+import {getCurrentInstance, defineProps, onBeforeMount, ref} from 'vue'
+import classNames from "classnames";
 
 const {proxy} = getCurrentInstance()
+const {label, icon, url} = defineProps({
+  label: String,
+  icon: String,
+  url: String
+})
 const list = ref([])
 const query = async () => {
-  proxy.axios.get('/app/news').then(res => {
+  proxy.axios.get(url).then(res => {
     if (res.data.ok) {
       list.value = res.data.data
     }
   })
 }
 onBeforeMount(async () => {
-  console.log('mounted')
   await query();
 })
+
 </script>
 
 <template>
   <div class="space-y-4">
     <div class="flex items-center space-x-1">
-      <i class="icon icon-new text-lg"></i>
+      <i :class="classNames('icon','text-lg',icon)"></i>
       <strong class="text-sm">
-        最新提取
+        {{ label }}
       </strong>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
       <div v-for="app in list"
            class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
         <div class="item">
           <div class="info">
             <div class="img-box">
               <div class="loading-box">
-                <span class="loading loading-spinner loading-sm text-base-content/30"></span>
+                <span class="loading-box-spinner"></span>
               </div>
               <img class="img"
                    :src="app.icon"
@@ -53,7 +59,7 @@ onBeforeMount(async () => {
             </div>
           </div>
           <div class="download-box">
-            <RouterLink to="versions" class="download-link">
+            <RouterLink to="1/version" class="download-link">
               <i class="icon icon-download download-icon"></i>
             </RouterLink>
           </div>

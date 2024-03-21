@@ -54,23 +54,23 @@ onBeforeMount(async () => {
              class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
           <div class="dump-item">
             <div class="dump-info">
-              <div class="img-box">
+              <div class="dump-img-box">
                 <div class="loading-box">
-                  <span class="loading loading-spinner loading-sm text-base-content/30"></span>
+                  <span class="loading-box-spinner"></span>
                 </div>
-                <img class="img"
+                <img class="dump-img"
                      :src="app.icon"
                      :title="app.name"
                      :alt="app.name"/>
               </div>
-              <div class="data-box">
-                <div class="app-name">
+              <div class="dump-data-box">
+                <div class="dump-app-name">
                   <strong class="md:truncate">{{ app.name }}</strong>
                 </div>
-                <div class="app-country">
+                <div class="dump-app-country">
                   <span class="lowercase">{{ app.country }}</span>
                 </div>
-                <div class="app-size-version">
+                <div class="dump-app-size-version">
                   <span>288MB</span>
                   <span class="border-l h-3 rotate-12"></span>
                   <span>1.2.2</span>
@@ -87,7 +87,7 @@ onBeforeMount(async () => {
               <div class="avatar-group -space-x-4">
                 <div class="avatar">
                   <div class="w-8">
-                    <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                    <img alt="" title="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
                   </div>
                 </div>
                 <div class="avatar">
@@ -103,6 +103,11 @@ onBeforeMount(async () => {
                 <div class="avatar">
                   <div class="w-8">
                     <img alt="" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"/>
+                  </div>
+                </div>
+                <div class="avatar placeholder">
+                  <div class="w-8 bg-neutral text-neutral-content text-sm">
+                    <span>+9</span>
                   </div>
                 </div>
               </div>
@@ -110,7 +115,9 @@ onBeforeMount(async () => {
           </div>
         </div>
       </div>
-
+      <div class="flex flex-row justify-center mt-6">
+        <button class="btn rounded-full font-medium">加载更多</button>
+      </div>
     </div>
   </div>
 </template>
@@ -120,36 +127,26 @@ onBeforeMount(async () => {
   @apply dark-bg flex flex-col opacity-95 shadow transition-all duration-300 md:hover:shadow-indigo-500/50 rounded-md px-4;
   .dump-info {
     @apply flex flex-row flex-1 my-4 space-x-2 md:truncate;
-    .img-box {
+    .dump-img-box {
       @apply flex items-center min-w-14 max-w-14 relative;
-      .img {
+      .dump-img {
         @apply rounded-md;
       }
     }
 
-    .data-box {
+    .dump-data-box {
       @apply w-3/4;
 
-      .app-name {
+      .dump-app-name {
         @apply md:truncate;
       }
 
-      .app-country {
+      .dump-app-country {
         @apply flex items-center text-sm;
       }
 
-      .app-size-version {
+      .dump-app-size-version {
         @apply flex items-center space-x-1 text-sm font-mono;
-      }
-    }
-  }
-
-  .download-box {
-    @apply flex items-end mb-3.5;
-    .download-link {
-      @apply text-inherit hover:text-inherit;
-      .download-icon {
-        @apply transition-all duration-300 text-xl cursor-pointer hover:text-info text-primary;
       }
     }
   }

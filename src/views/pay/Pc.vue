@@ -70,7 +70,7 @@ const pay_qrcode = ref('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUoAAAFKCA
         <div class="form-control mt-4">
           <div class="flex justify-center items-center relative w-60 h-60 mx-auto">
             <div class="loading-box">
-              <span class="loading loading-spinner loading-sm text-base-content/30"></span>
+              <span class="loading-box-spinner"></span>
             </div>
             <img :src="pay_qrcode" class="w-60 h-60 shadow"/>
           </div>

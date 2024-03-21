@@ -93,69 +93,69 @@ onBeforeMount(async () => {
         </div>
       </div>
       <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
-        <div class="item">
-          <div class="item-shadow">
+        <div class="profile-item">
+          <div class="profile-item-shadow">
             <div class="flex flex-row flex-1 my-4">
-              <div class="item-icon">
+              <div class="profile-item-icon">
                 <i class="icon icon-appstore text-xl"></i>
               </div>
-              <div class="item-label">
-                <h1 class="item-name">我的提取</h1>
+              <div class="profile-item-label">
+                <h1 class="profile-item-name">我的提取</h1>
                 <div class="text-base-content/30 text-sm">提取过的所有应用</div>
               </div>
             </div>
-            <div class="item-right">
+            <div class="profile-item-right">
               <i class="icon icon-right"></i>
             </div>
           </div>
         </div>
 
-        <div class="item">
-          <div class="item-shadow">
+        <div class="profile-item">
+          <div class="profile-item-shadow">
             <div class="flex flex-row flex-1 my-4">
-              <div class="item-icon">
+              <div class="profile-item-icon">
                 <i class="icon icon-download text-xl"></i>
               </div>
-              <div class="item-label">
-                <h1 class="item-name">下载记录</h1>
+              <div class="profile-item-label">
+                <h1 class="profile-item-name">下载记录</h1>
                 <div class="text-base-content/30 text-sm">记录下载应用</div>
               </div>
             </div>
-            <div class="item-right">
+            <div class="profile-item-right">
               <i class="icon icon-right"></i>
             </div>
           </div>
         </div>
 
-        <div class="item">
-          <div class="item-shadow">
+        <div class="profile-item">
+          <div class="profile-item-shadow">
             <div class="flex flex-row flex-1 my-4">
-              <div class="item-icon">
+              <div class="profile-item-icon">
                 <i class="icon icon-price text-xl text-success"></i>
               </div>
-              <div class="item-label">
+              <div class="profile-item-label">
                 <h1 class="text-success item-name">推广送币</h1>
                 <div class="text-base-content/30 text-sm">邀请朋友注册使用可返币</div>
               </div>
             </div>
-            <div class="item-right">
+            <div class="profile-item-right">
               <i class="icon icon-right"></i>
             </div>
           </div>
         </div>
 
-        <div class="item">
-          <div class="item-shadow">
+        <div class="profile-item">
+          <div class="profile-item-shadow">
             <div class="flex flex-row flex-1 my-4">
-              <div class="item-icon">
+              <div class="profile-item-icon">
                 <i class="icon icon-setting text-xl"></i>
               </div>
-              <div class="item-label">
-                <h1 class="item-name">我的设置</h1>
+              <div class="profile-item-label">
+                <h1 class="profile-item-name">我的设置</h1>
                 <div class="text-base-content/30 text-sm">定制化您的设置</div>
               </div>
             </div>
-            <div class="item-right">
+            <div class="profile-item-right">
               <i class="icon icon-right"></i>
             </div>
           </div>
@@ -167,22 +167,22 @@ onBeforeMount(async () => {
 </template>
 
 <style lang="scss" scoped>
-div.item {
-  div.item-shadow {
+div.profile-item {
+  div.profile-item-shadow {
     @apply duration-300 transition-all dark-bg flex flex-row bg-base-100 opacity-95 shadow rounded-md px-4;
     &:hover {
       @apply -translate-y-px translate-x-px shadow-indigo-500/50 cursor-pointer;
     }
 
-    div.item-right {
+    div.profile-item-right {
       @apply md:hidden flex items-center;
     }
 
-    div.item-icon {
+    div.profile-item-icon {
       @apply flex flex-1 items-center justify-center max-w-10;
     }
 
-    div.item-label {
+    div.profile-item-label {
       @apply flex-col flex-1;
     }
   }
