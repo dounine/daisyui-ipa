@@ -52,9 +52,12 @@ onBeforeMount(async () => {
                 <span class="lowercase">{{ app.country }}</span>
               </div>
               <div class="app-size-version">
-                <span>288MB</span>
-                <span class="border-l h-3 rotate-12"></span>
-                <span>1.2.2</span>
+                <div class="flex flex-row space-x-1">
+                  <span>{{ app.size.split(' ')[0] }}</span>
+                  <span>{{ app.size.split(' ')[1] }}</span>
+                </div>
+                <span class="border-l h-3 rotate-12 border-base-content/40"></span>
+                <span>{{ app.version }}</span>
               </div>
             </div>
           </div>
@@ -73,7 +76,7 @@ onBeforeMount(async () => {
 .item {
   @apply dark-bg flex flex-row opacity-95 shadow transition-all duration-300 md:hover:shadow-indigo-500/50 rounded-md px-4;
   .info {
-    @apply flex flex-row flex-1 my-4 space-x-2 md:truncate;
+    @apply flex flex-row flex-1 my-4 space-x-4 md:truncate;
     .img-box {
       @apply flex items-center min-w-14 max-w-14 relative;
       .img {
@@ -93,7 +96,7 @@ onBeforeMount(async () => {
       }
 
       .app-size-version {
-        @apply flex items-center space-x-1 text-sm font-mono;
+        @apply flex items-center space-x-2 text-sm font-mono;
       }
     }
   }
