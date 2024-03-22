@@ -70,7 +70,7 @@ onBeforeMount(async () => {
             </div>
           </div>
           <div class="download-box">
-            <RouterLink to="1/version" class="download-link">
+            <RouterLink :to="`/${app.country}/${app.app_id}/version`" class="download-link">
               <i class="icon icon-download download-icon"></i>
             </RouterLink>
           </div>

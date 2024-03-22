@@ -1,29 +1,27 @@
 <script setup>
 import {getCurrentInstance, onMounted, ref} from "vue";
-import DumpView from "./version/Dump.vue";
-import Common from "../util/common.js";
 
 const {proxy} = getCurrentInstance()
-const loading = ref(false)
+const {country, app_id} = proxy.$route.params
+const loading = ref(true)
 const data = ref({
   info: {
     name: '方块消消乐2022',
     genres: '休闲',
-    description: '消消乐',
-    free: true,
-    price: '免费',
+    des: '消消乐',
+    price: 0,
     minimumOsVersion: '14.0',
     country: 'cn',
-    appid: '123434',
+    app_id: '123434',
     version: '1.0.0',
-    size: 12342134,
+    size: '1 MB',
     icon: ''
   },
   versions: [
     {
       version: '1.0.3',
-      size: 341234,
-      time: '2024-02-03 14:14:14',
+      size: '1 MB',
+      time: '2024-02-03T14:14:14',
     }
   ]
 })
@@ -33,8 +31,7 @@ const country_format = (country) => {
 const query = async () => {
   let res = null
   try {
-    loading.value = true
-    res = await proxy.axios.get(`/app/versions`)
+    res = await proxy.axios.get(`/app/${country}/${app_id}/versions`)
   } catch (e) {
     // loadTimeout.value = e.message.includes('timeout')
     return
@@ -51,7 +48,10 @@ onMounted(async () => {
 <template>
   <div class="mt-10">
     <router-view></router-view>
-    <div class="flex flex-col py-4 flex-1">
+    <div v-if="loading" class="text-center">
+      <i class="icon icon-loading text-base-content/50"></i>
+    </div>
+    <div v-else class="flex flex-col py-4 flex-1">
       <div class="flex flex-row justify-between">
         <div class="font-mono text-3xl">
           {{ data.info.name }}
@@ -68,7 +68,7 @@ onMounted(async () => {
       <div class="divider"></div>
       <div class="flex flex-row justify-between">
         <div class="text-base-content/30">
-          {{ data.info.description }}
+          {{ data.info.des }}
         </div>
         <div class="flex flex-row justify-center text-base-content/70 space-x-2 break-keep">
           <div>
@@ -80,7 +80,7 @@ onMounted(async () => {
           </div>
           <div class="text-base-content/30">/</div>
           <div>
-            {{ data.info.price }}
+            {{ data.info.price===0?'免费':`￥${(data.info.price/100).toFixed(2)}` }}
           </div>
         </div>
       </div>
@@ -95,25 +95,28 @@ onMounted(async () => {
       <span v-if="loading" class="loading loading-spinner"></span>
     </div>
     <div v-else class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
-      <div v-for="version in data.versions"
+      <div v-for="item in data.versions"
            class="transition-all duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
         <div
             class="dark-bg transition-all flex flex-row bg-base-100 opacity-95 shadow md:hover:shadow-indigo-500/50 rounded-md px-4">
           <div class="flex flex-row flex-1 my-4">
             <div class="flex-col flex-1 justify-around ml-2">
               <div class="flex items-center w-full lg:w-44 md:max-w-60">
-                <strong class="md:truncate">{{ version.version }}</strong>
+                <strong class="md:truncate">{{ item.version }}</strong>
               </div>
               <div class="flex items-center text-sm size">
-                <p class="text-base-content/50">{{ Common.sizeFormat(version.size) }}</p>
+                <div class="flex flex-row space-x-1 font-mono text-base-content/50">
+                  <span>{{ item.size.split(' ')[0]}}</span>
+                  <span>{{ item.size.split(' ')[1]}}</span>
+                </div>
               </div>
               <div class="flex items-center space-x-1 text-base-content/50 text-sm font-mono">
-                <p>{{ version.time }}</p>
+                <p>{{ item.time }}</p>
               </div>
             </div>
           </div>
           <div class="flex items-end mb-3.5">
-            <RouterLink to="version/1.0.0/dump">
+            <RouterLink :to="`version/${item.version}/dump`">
               <i class="icon icon-download text-xl cursor-pointer transition-all duration-300 hover:text-info text-primary"></i>
             </RouterLink>
           </div>

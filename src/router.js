@@ -28,7 +28,7 @@ const routes = [
         component: () => import('./views/Dump.vue')
     },
     {
-        path: "/:appid/version",
+        path: "/:country/:app_id/version",
         name: "version",
         component: () => import("./views/Version.vue"),
         children: [
