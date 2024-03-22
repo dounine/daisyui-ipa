@@ -3,6 +3,7 @@ import {getCurrentInstance, defineProps, onBeforeMount, ref} from 'vue'
 import classNames from "classnames";
 
 const {proxy} = getCurrentInstance()
+const loading = ref(true)
 const {label, icon, url} = defineProps({
   label: String,
   icon: String,
@@ -10,11 +11,15 @@ const {label, icon, url} = defineProps({
 })
 const list = ref([])
 const query = async () => {
-  proxy.axios.get(url).then(res => {
-    if (res.data.ok) {
-      list.value = res.data.data
-    }
-  })
+  proxy
+      .axios
+      .get(url)
+      .then(res => {
+        loading.value = false
+        if (res.data.ok) {
+          list.value = res.data.data
+        }
+      })
 }
 onBeforeMount(async () => {
   await query();
@@ -30,7 +35,10 @@ onBeforeMount(async () => {
         {{ label }}
       </strong>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+    <div v-if="loading" class="text-center">
+      <i class="icon loading loading-spinner loading-sm text-base-content/30"></i>
+    </div>
+    <div v-else class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
       <div v-for="app in list"
            class="transition-transform duration-300 md:hover:-translate-y-px md:hover:translate-x-px">
         <div class="item">
